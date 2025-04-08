@@ -5,7 +5,10 @@ apis:
   - aid: foursquare:foursquare
     name: Foursquare
     tags:
-      - API
+      - Locations
+      - Recommendations
+      - Reviews
+      - Places
     humanURL: ' https://location.foursquare.com/products/places-api/'
     properties:
       - url: ' https://location.foursquare.com/products/places-api/'
@@ -24,7 +27,10 @@ apis:
       local communities.
 name: Foursquare
 tags:
-  - API
+  - Locations
+  - Recommendations
+  - Reviews
+  - Places
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
