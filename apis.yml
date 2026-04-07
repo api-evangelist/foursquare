@@ -11,9 +11,9 @@ modified: '2026-03-16'
 position: Consumer
 tags:
   - Locations
+  - Places
   - Recommendations
   - Reviews
-  - Places
 url: >-
   https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/apis.yml
 specificationVersion: '0.19'
@@ -22,9 +22,9 @@ apis:
     name: Foursquare Places API
     tags:
       - Locations
+      - Places
       - Recommendations
       - Reviews
-      - Places
     humanURL: https://location.foursquare.com/products/places-api/
     properties:
       - url: https://location.foursquare.com/products/places-api/
