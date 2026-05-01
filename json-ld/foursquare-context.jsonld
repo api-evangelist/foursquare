@@ -1,0 +1,21 @@
+{
+  "@context": {
+    "@vocab": "https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/vocabulary/foursquare-vocabulary.yml#",
+    "schema": "https://schema.org/",
+    "Place": "schema:Place",
+    "name": "schema:name",
+    "address": "schema:streetAddress",
+    "locality": "schema:addressLocality",
+    "region": "schema:addressRegion",
+    "postcode": "schema:postalCode",
+    "country": "schema:addressCountry",
+    "geocodes": "schema:geo",
+    "latitude": "schema:latitude",
+    "longitude": "schema:longitude",
+    "rating": "schema:aggregateRating",
+    "categories": "schema:additionalType",
+    "Tip": "schema:Review",
+    "text": "schema:reviewBody",
+    "created_at": "schema:dateCreated"
+  }
+}

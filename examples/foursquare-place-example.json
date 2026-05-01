@@ -1,0 +1,26 @@
+{
+  "fsq_id": "4a9c6f10f964a520ba2b20e3",
+  "name": "Bryant Park",
+  "location": {
+    "address": "Bryant Park",
+    "locality": "New York",
+    "region": "NY",
+    "postcode": "10018",
+    "country": "US",
+    "formatted_address": "Bryant Park, New York, NY 10018"
+  },
+  "geocodes": {
+    "main": {
+      "latitude": 40.753739,
+      "longitude": -73.983448
+    }
+  },
+  "categories": [
+    { "id": 16032, "name": "Park" }
+  ],
+  "chains": [],
+  "distance": 142,
+  "rating": 9.3,
+  "popularity": 0.9956,
+  "verified": true
+}

@@ -1,0 +1,73 @@
+aid: foursquare:places-rules
+name: Foursquare Places API Operational Rules
+description: >-
+  Operational rules and constraints for working with the Foursquare Places API,
+  covering authentication, query parameters, rate limits, attribution, and
+  data caching.
+modified: '2026-04-28'
+rules:
+  - id: service-key-required
+    title: Service Key Required
+    description: >-
+      All Places API requests require a Service Key supplied via the
+      Authorization header. The current Places API uses Bearer scheme; the
+      legacy v3 endpoint accepts the raw key.
+    severity: required
+  - id: location-required
+    title: Provide Location Context
+    description: >-
+      Place search and nearby endpoints require either a ll (lat,lng) pair or
+      a near textual location. Without one, results will be empty or rejected.
+    severity: required
+  - id: radius-cap
+    title: Radius Limit
+    description: >-
+      Search radius is capped at 100,000 meters. Use category filters and
+      sort parameters to narrow results rather than expanding radius.
+    severity: required
+  - id: limit-cap
+    title: Pagination Limit Cap
+    description: >-
+      The limit parameter is capped at 50 results per page. Use cursor-based
+      pagination via the link headers for larger result sets.
+    severity: required
+  - id: fields-projection
+    title: Use Field Projection
+    description: >-
+      Pass the fields parameter to project only required attributes. Default
+      responses are minimal; rich attributes (hours, rating, popularity,
+      stats) must be explicitly requested.
+    severity: recommended
+  - id: attribution
+    title: Foursquare Attribution
+    description: >-
+      Apps using the Places API must display Foursquare attribution per the
+      developer terms. Consult the platform policy before publishing.
+    severity: required
+  - id: caching-policy
+    title: Caching Restrictions
+    description: >-
+      Cached place data must comply with Foursquare developer terms; in
+      particular, long-term storage of POI data without periodic refresh is
+      restricted.
+    severity: required
+  - id: rate-limits
+    title: Rate Limits
+    description: >-
+      Plans have request-per-second and per-day limits. Implement
+      exponential backoff on HTTP 429 responses and inspect rate-limit
+      headers.
+    severity: required
+  - id: category-ids
+    title: Use Category IDs
+    description: >-
+      Filtering by Foursquare category id is more reliable than free-text
+      query and yields better recall and precision; consult the category
+      taxonomy.
+    severity: recommended
+  - id: legacy-v3-deprecation
+    title: Migrate Off Legacy v3
+    description: >-
+      api.foursquare.com/v3 is the legacy host; new development should target
+      places-api.foursquare.com with the Bearer Service Key scheme.
+    severity: recommended

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-tip.json",
+  "title": "FoursquareTip",
+  "description": "A user-contributed tip about a Foursquare place.",
+  "type": "object",
+  "required": ["id", "text"],
+  "properties": {
+    "id": { "type": "string" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "text": { "type": "string" }
+  }
+}

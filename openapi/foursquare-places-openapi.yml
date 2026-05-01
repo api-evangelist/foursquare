@@ -1,0 +1,278 @@
+openapi: 3.1.0
+info:
+  title: Foursquare Places API
+  description: >-
+    The Foursquare Places API provides global access to over 100 million points
+    of interest (POI) for place search, details, autocomplete, geotagging, and
+    photos/tips. This OpenAPI describes the most commonly used endpoints; refer
+    to the official documentation for the complete and authoritative reference.
+  version: '2024-11-01'
+  contact:
+    name: Foursquare Developer Support
+    url: https://docs.foursquare.com/
+  license:
+    name: Foursquare Developer Terms of Service
+    url: https://foursquare.com/legal/api/platformpolicy
+servers:
+  - url: https://places-api.foursquare.com
+    description: Foursquare Places API (current)
+  - url: https://api.foursquare.com/v3
+    description: Foursquare Places API (legacy v3)
+security:
+  - serviceKey: []
+tags:
+  - name: search
+    description: Find and explore places
+  - name: details
+    description: Retrieve attributes for a specific place
+  - name: photos
+    description: Photos associated with a place
+  - name: tips
+    description: User tips associated with a place
+  - name: autocomplete
+    description: Type-ahead search for places, addresses, and geographies
+paths:
+  /places/search:
+    get:
+      tags: [search]
+      summary: Search for places
+      description: Find places that match a query, location, category, or radius.
+      operationId: searchPlaces
+      parameters:
+        - in: query
+          name: query
+          schema: { type: string }
+          description: Free-text search term (e.g., "coffee").
+        - in: query
+          name: ll
+          schema: { type: string }
+          description: Latitude,longitude pair (e.g., "40.7128,-74.0060").
+        - in: query
+          name: near
+          schema: { type: string }
+          description: Geocodable text location (e.g., "New York, NY").
+        - in: query
+          name: radius
+          schema: { type: integer, maximum: 100000 }
+          description: Search radius in meters.
+        - in: query
+          name: categories
+          schema: { type: string }
+          description: Comma-separated Foursquare category ids.
+        - in: query
+          name: limit
+          schema: { type: integer, default: 10, maximum: 50 }
+        - in: query
+          name: sort
+          schema:
+            type: string
+            enum: [RELEVANCE, RATING, DISTANCE, POPULARITY]
+      responses:
+        '200':
+          description: A page of matching places.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlaceSearchResponse'
+  /places/nearby:
+    get:
+      tags: [search]
+      summary: Nearby places
+      description: Return places near a coordinate, ordered by distance.
+      operationId: nearbyPlaces
+      parameters:
+        - in: query
+          name: ll
+          required: true
+          schema: { type: string }
+        - in: query
+          name: radius
+          schema: { type: integer }
+        - in: query
+          name: limit
+          schema: { type: integer, default: 10, maximum: 50 }
+      responses:
+        '200':
+          description: A page of nearby places.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlaceSearchResponse'
+  /autocomplete:
+    get:
+      tags: [autocomplete]
+      summary: Autocomplete query suggestions
+      description: Return type-ahead suggestions for places, addresses, and geographies.
+      operationId: autocomplete
+      parameters:
+        - in: query
+          name: query
+          required: true
+          schema: { type: string }
+        - in: query
+          name: ll
+          schema: { type: string }
+        - in: query
+          name: types
+          schema:
+            type: string
+            description: Comma-separated set such as place,address,geo.
+      responses:
+        '200':
+          description: Autocomplete suggestions.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AutocompleteResponse'
+  /places/{fsq_id}:
+    get:
+      tags: [details]
+      summary: Place details
+      description: Retrieve details for a specific place by fsq_id.
+      operationId: getPlace
+      parameters:
+        - in: path
+          name: fsq_id
+          required: true
+          schema: { type: string }
+        - in: query
+          name: fields
+          schema: { type: string }
+          description: Comma-separated list of fields to include.
+      responses:
+        '200':
+          description: A place object.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Place'
+  /places/{fsq_id}/photos:
+    get:
+      tags: [photos]
+      summary: Place photos
+      operationId: getPlacePhotos
+      parameters:
+        - in: path
+          name: fsq_id
+          required: true
+          schema: { type: string }
+        - in: query
+          name: limit
+          schema: { type: integer, default: 10, maximum: 50 }
+      responses:
+        '200':
+          description: Photos for the place.
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Photo' }
+  /places/{fsq_id}/tips:
+    get:
+      tags: [tips]
+      summary: Place tips
+      operationId: getPlaceTips
+      parameters:
+        - in: path
+          name: fsq_id
+          required: true
+          schema: { type: string }
+      responses:
+        '200':
+          description: Tips for the place.
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Tip' }
+components:
+  securitySchemes:
+    serviceKey:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: >-
+        Service Key passed in the Authorization header. Newer Places API uses
+        "Bearer <service-key>"; legacy v3 uses the raw key.
+  schemas:
+    Place:
+      type: object
+      properties:
+        fsq_id: { type: string }
+        name: { type: string }
+        location:
+          type: object
+          properties:
+            address: { type: string }
+            locality: { type: string }
+            region: { type: string }
+            postcode: { type: string }
+            country: { type: string }
+            formatted_address: { type: string }
+        geocodes:
+          type: object
+          properties:
+            main:
+              type: object
+              properties:
+                latitude: { type: number }
+                longitude: { type: number }
+        categories:
+          type: array
+          items:
+            type: object
+            properties:
+              id: { type: integer }
+              name: { type: string }
+        chains:
+          type: array
+          items:
+            type: object
+            properties:
+              id: { type: string }
+              name: { type: string }
+        distance: { type: integer }
+        rating: { type: number }
+        popularity: { type: number }
+        verified: { type: boolean }
+    PlaceSearchResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items: { $ref: '#/components/schemas/Place' }
+        context:
+          type: object
+          properties:
+            geo_bounds:
+              type: object
+    AutocompleteResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              type: { type: string }
+              text:
+                type: object
+                properties:
+                  primary: { type: string }
+                  secondary: { type: string }
+              place: { $ref: '#/components/schemas/Place' }
+    Photo:
+      type: object
+      properties:
+        id: { type: string }
+        created_at: { type: string, format: date-time }
+        prefix: { type: string }
+        suffix: { type: string }
+        width: { type: integer }
+        height: { type: integer }
+    Tip:
+      type: object
+      properties:
+        id: { type: string }
+        created_at: { type: string, format: date-time }
+        text: { type: string }

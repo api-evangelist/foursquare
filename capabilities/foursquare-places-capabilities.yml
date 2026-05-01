@@ -1,0 +1,55 @@
+aid: foursquare:places-capabilities
+name: Foursquare Places API Capabilities
+description: >-
+  Capability map for the Foursquare Places API across search, details,
+  autocomplete, photos, tips, and geotagging.
+modified: '2026-04-28'
+capabilities:
+  - id: place-search
+    name: Place Search
+    description: >-
+      Find places using free-text query, coordinate, near textual location,
+      radius, category filters, and sort by relevance, rating, distance, or
+      popularity.
+    operations:
+      - GET /places/search
+      - GET /places/nearby
+  - id: place-details
+    name: Place Details
+    description: >-
+      Retrieve a single place by fsq_id with rich attributes (location,
+      geocodes, categories, chains, hours, rating, popularity, stats, social
+      media, attributes).
+    operations:
+      - GET /places/{fsq_id}
+  - id: photos
+    name: Place Photos
+    description: List user-contributed photos for a place.
+    operations:
+      - GET /places/{fsq_id}/photos
+  - id: tips
+    name: Place Tips
+    description: List user tips and reviews for a place.
+    operations:
+      - GET /places/{fsq_id}/tips
+  - id: autocomplete
+    name: Autocomplete
+    description: >-
+      Type-ahead suggestions across places, addresses, and geographies for
+      search-as-you-type UIs.
+    operations:
+      - GET /autocomplete
+  - id: geotagging
+    name: Geotagging
+    description: >-
+      Resolve raw coordinates or addresses into Foursquare POIs with high
+      confidence using geotagging endpoints.
+    operations:
+      - GET /geotagging/candidates
+  - id: placemaker
+    name: Placemaker
+    description: >-
+      Submit business locations to the Foursquare POI graph for ingestion
+      and ongoing curation.
+    operations:
+      - POST /placemaker/places

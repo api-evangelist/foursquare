@@ -1,0 +1,18 @@
+{
+  "results": [
+    {
+      "fsq_id": "4a9c6f10f964a520ba2b20e3",
+      "name": "Bryant Park",
+      "geocodes": { "main": { "latitude": 40.753739, "longitude": -73.983448 } },
+      "categories": [{ "id": 16032, "name": "Park" }],
+      "distance": 142
+    },
+    {
+      "fsq_id": "59bccd0e72ed1d2c2c4e2bd5",
+      "name": "The New York Public Library",
+      "geocodes": { "main": { "latitude": 40.753181, "longitude": -73.982253 } },
+      "categories": [{ "id": 12027, "name": "Library" }],
+      "distance": 218
+    }
+  ]
+}

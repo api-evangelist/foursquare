@@ -1,0 +1,60 @@
+aid: foursquare:vocabulary
+name: Foursquare Vocabulary
+description: >-
+  Domain vocabulary for the Foursquare Places API, covering POIs, geocodes,
+  categories, chains, tips, photos, and movement signals.
+modified: '2026-04-28'
+terms:
+  - term: Place
+    definition: >-
+      A point of interest in the Foursquare graph (POI) representing a
+      business, landmark, residence, or geography.
+  - term: fsq_id
+    definition: >-
+      Stable globally unique identifier assigned by Foursquare to each place.
+  - term: Geocode
+    definition: >-
+      Latitude/longitude pair associated with a place. The "main" geocode is
+      the canonical centroid.
+  - term: Category
+    definition: >-
+      A taxonomy node from the Foursquare category hierarchy describing the
+      type of place (e.g., Coffee Shop, Park, Library).
+  - term: Chain
+    definition: >-
+      A brand identifier shared by many places (e.g., Starbucks), useful for
+      grouping franchised locations.
+  - term: Tip
+    definition: >-
+      A short user-contributed note or review about a place.
+  - term: Photo
+    definition: >-
+      A user-contributed image associated with a place, addressed by prefix
+      and suffix concatenated with a size token.
+  - term: Autocomplete
+    definition: >-
+      Type-ahead suggestion endpoint returning places, addresses, and
+      geographies matching a query prefix.
+  - term: Geotagging
+    definition: >-
+      Process of resolving raw coordinates or text addresses to specific
+      Foursquare POIs.
+  - term: Placemaker
+    definition: >-
+      Foursquare's tool for submitting and curating business locations in
+      the POI graph.
+  - term: Movement SDK
+    definition: >-
+      Mobile SDK that detects user visits to places using device location
+      signals and the Foursquare POI graph.
+  - term: Service Key
+    definition: >-
+      The API credential for the Places API, supplied via the Authorization
+      header (Bearer scheme on the new host).
+  - term: Popularity
+    definition: >-
+      A 0-1 score reflecting how busy or well-known a place is, derived from
+      Foursquare's behavioral data.
+  - term: Rating
+    definition: >-
+      A 0-10 score derived from user reviews and tips for a place.

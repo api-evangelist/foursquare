@@ -1,42 +1,73 @@
 # Foursquare (foursquare)
-Foursquare is a location-based social networking platform that allows users to discover and explore new places in their area. Users can check in at different locations, share recommendations and reviews, and earn badges and rewards for visiting certain places. Foursquare also uses location data to provide personalized recommendations and suggestions for places to visit based on a user's preferences and past check-ins. Additionally, businesses can use Foursquare to connect with customers, promote specials and events, and gain valuable insights into their customer base. Overall, Foursquare aims to help users discover new and interesting places, connect with others who share similar interests, and make the most out of their local communities.
+
+Foursquare is a location intelligence platform that maintains a global graph of more than 100 million points of interest (POI) and provides developer APIs and SDKs for place search, geotagging, autocomplete, audience measurement, and visit detection across web and mobile.
 
 **URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/apis.yml)
 
 ## Scope
+- **Type:** Index
+- **Position:** Consumer
+- **Access:** 3rd-Party
 
-- **Type:** Index 
-- **Position:** Consumer 
-- **Access:** 3rd-Party 
-
-## Tags:
-
- - Locations, Recommendations, Reviews, Places
+## Tags
+- Locations, Places, Geocoding, Recommendations, Reviews, Movement
 
 ## Timestamps
-
-- **Created:** 2025-03-01 
-- **Modified:** 2025-04-07 
+- **Created:** 2025-03-01
+- **Modified:** 2026-04-28
 
 ## APIs
 
-### Foursquare
-Foursquare is a location-based social networking platform that allows users to discover and explore new places in their area. Users can check in at different locations, share recommendations and reviews, and earn badges and rewards for visiting certain places. Foursquare also uses location data to provide personalized recommendations and suggestions for places to visit based on a user's preferences and past check-ins. Additionally, businesses can use Foursquare to connect with customers, promote specials and events, and gain valuable insights into their customer base. Overall, Foursquare aims to help users discover new and interesting places, connect with others who share similar interests, and make the most out of their local communities.
+### Foursquare Places API
+The Foursquare Places API provides global POI data with endpoints for place search, nearby, autocomplete, place details, photos, tips, geotagging, and Placemaker submissions.
 
-**Human URL:** [ https://location.foursquare.com/products/places-api/]( https://location.foursquare.com/products/places-api/)
+**Base URL:** `https://places-api.foursquare.com`
+**Human URL:** [Places API Overview](https://docs.foursquare.com/developer/reference/places-api-overview)
 
-
-#### Tags:
-
- - Locations, Recommendations, Reviews, Places
+#### Tags
+- Places, Search, Geocoding, Autocomplete
 
 #### Properties
+- [Documentation](https://docs.foursquare.com/developer/reference/places-api-overview)
+- [Sign Up](https://foursquare.com/developers/)
+- [OpenAPI](openapi/foursquare-places-openapi.yml)
+- [Rules](rules/foursquare-places-rules.yml)
+- [Capabilities](capabilities/foursquare-places-capabilities.yml)
+- [JSON Schema - Place](json-schema/foursquare-place.json)
+- [JSON Schema - Tip](json-schema/foursquare-tip.json)
+- [JSON-LD Context](json-ld/foursquare-context.jsonld)
+- [Vocabulary](vocabulary/foursquare-vocabulary.yml)
+- [Example - Place](examples/foursquare-place-example.json)
+- [Example - Search Response](examples/foursquare-search-example.json)
 
-- [Documentation]( https://location.foursquare.com/products/places-api/)
+### Foursquare Movement SDK
+Mobile SDK for iOS, Android, and React Native that translates passive device location signals into visit events using the Foursquare POI graph.
+
+**Human URL:** [Movement SDK Overview](https://docs.foursquare.com/developer/docs/movement-sdk-overview)
+
+### Foursquare Movement Geofence API
+Server-side API for managing geofences that trigger events when Movement SDK-equipped devices enter or exit defined places.
+
+**Human URL:** [Movement Geofence API](https://docs.foursquare.com/developer/reference/movement-geofence-api)
+
+### Foursquare Studio Data API
+API for managing datasets, maps, and visualizations within Foursquare Studio for geospatial analytics.
+
+**Human URL:** [Studio Data API](https://docs.foursquare.com/developer/reference/studio-data-api)
+
+### Foursquare Measurement API (MAPI)
+API for attribution and audience measurement using Foursquare visit panels.
+
+**Human URL:** [Measurement API](https://docs.foursquare.com/developer/reference/measurement-api-mapi)
+
+## Common Properties
+- [Website](https://foursquare.com/)
+- [Developer Portal](https://docs.foursquare.com/developer/)
+- [Sign Up](https://foursquare.com/developers/)
+- [Documentation](https://docs.foursquare.com/developer/reference/places-api-overview)
+- [Developer Community Discord](https://discord.gg/foursquare)
+- [Blog](https://location.foursquare.com/resources/blog/)
 
 ## Maintainers
-
 **FN:** Kin Lane
-
-**Email:** info@apievangelist.com
-
+**Email:** kin@apievangelist.com
