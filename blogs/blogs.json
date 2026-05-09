@@ -3,11 +3,11 @@
   "feeds": [
     {
       "source": "https://location.foursquare.com/resources/blog/",
-      "feed_url": "https://foursquare.com/feed/",
-      "saved": 10,
-      "title": "Foursquare"
+      "feed_url": "https://location.foursquare.com/resources/blog/feed/",
+      "title": "Comments on:",
+      "saved": 0
     }
   ],
   "post_count": 10,
-  "fetched": "2026-05-03T23:28:00Z"
+  "fetched": "2026-05-09T20:17:51Z"
 }
