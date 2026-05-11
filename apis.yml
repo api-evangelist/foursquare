@@ -140,6 +140,15 @@ common:
     url: https://discord.gg/foursquare
   - type: Blog
     url: https://location.foursquare.com/resources/blog/
+  - type: Integrations
+    url: https://foursquare.com/company/partners/
+integrations:
+  - name: Button One Image
+  - name: Button Two Image
+  - name: Thumbnail
+  - name: Featured Img
+  - name: Esri
+  - name: Starbucks
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
