@@ -1,0 +1,91 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Foursquare Places API — autocomplete
+  description: 'Foursquare Places API — autocomplete. 1 operations. Lead operation: Autocomplete query suggestions. Self-contained
+    Naftiko capability covering one Foursquare business surface.'
+  tags:
+  - Foursquare
+  - autocomplete
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FOURSQUARE_API_KEY: FOURSQUARE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: places-autocomplete
+    baseUri: https://places-api.foursquare.com
+    description: Foursquare Places API — autocomplete business capability. Self-contained, no shared references.
+    resources:
+    - name: autocomplete
+      path: /autocomplete
+      operations:
+      - name: autocomplete
+        method: GET
+        description: Autocomplete query suggestions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: query
+          in: query
+          type: string
+          required: true
+        - name: ll
+          in: query
+          type: string
+        - name: types
+          in: query
+          type: string
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.FOURSQUARE_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: places-autocomplete-rest
+    port: 8080
+    description: REST adapter for Foursquare Places API — autocomplete. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/autocomplete
+      name: autocomplete
+      description: REST surface for autocomplete.
+      operations:
+      - method: GET
+        name: autocomplete
+        description: Autocomplete query suggestions
+        call: places-autocomplete.autocomplete
+        with:
+          query: rest.query
+          ll: rest.ll
+          types: rest.types
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: places-autocomplete-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Foursquare Places API — autocomplete. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: autocomplete-query-suggestions
+      description: Autocomplete query suggestions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: places-autocomplete.autocomplete
+      with:
+        query: tools.query
+        ll: tools.ll
+        types: tools.types
+      outputParameters:
+      - type: object
+        mapping: $.
