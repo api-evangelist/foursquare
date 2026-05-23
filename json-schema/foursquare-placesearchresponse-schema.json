@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PlaceSearchResponse",
+  "title": "PlaceSearchResponse",
+  "type": "object",
+  "properties": {
+    "results": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/Place"
+      }
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "geo_bounds": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

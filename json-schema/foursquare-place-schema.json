@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Place",
+  "title": "Place",
+  "type": "object",
+  "properties": {
+    "fsq_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "locality": {
+          "type": "string"
+        },
+        "region": {
+          "type": "string"
+        },
+        "postcode": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "formatted_address": {
+          "type": "string"
+        }
+      }
+    },
+    "geocodes": {
+      "type": "object",
+      "properties": {
+        "main": {
+          "type": "object",
+          "properties": {
+            "latitude": {
+              "type": "number"
+            },
+            "longitude": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "chains": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "distance": {
+      "type": "integer"
+    },
+    "rating": {
+      "type": "number"
+    },
+    "popularity": {
+      "type": "number"
+    },
+    "verified": {
+      "type": "boolean"
+    }
+  }
+}

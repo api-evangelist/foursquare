@@ -1,0 +1,96 @@
+{
+  "provider": "Foursquare",
+  "providerId": "foursquare",
+  "kind": "json-structure",
+  "description": "Structural overview of the Foursquare API surface; extracted from openapi/.",
+  "schemaCount": 5,
+  "operationCount": 6,
+  "schemas": [
+    {
+      "name": "Place",
+      "type": "object",
+      "propertyCount": 10,
+      "required": []
+    },
+    {
+      "name": "PlaceSearchResponse",
+      "type": "object",
+      "propertyCount": 2,
+      "required": []
+    },
+    {
+      "name": "AutocompleteResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "Photo",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "Tip",
+      "type": "object",
+      "propertyCount": 3,
+      "required": []
+    }
+  ],
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/places/search",
+      "operationId": "searchPlaces",
+      "summary": "Search for places",
+      "tags": [
+        "search"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/places/nearby",
+      "operationId": "nearbyPlaces",
+      "summary": "Nearby places",
+      "tags": [
+        "search"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/autocomplete",
+      "operationId": "autocomplete",
+      "summary": "Autocomplete query suggestions",
+      "tags": [
+        "autocomplete"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/places/{fsq_id}",
+      "operationId": "getPlace",
+      "summary": "Place details",
+      "tags": [
+        "details"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/places/{fsq_id}/photos",
+      "operationId": "getPlacePhotos",
+      "summary": "Place photos",
+      "tags": [
+        "photos"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/places/{fsq_id}/tips",
+      "operationId": "getPlaceTips",
+      "summary": "Place tips",
+      "tags": [
+        "tips"
+      ]
+    }
+  ]
+}
