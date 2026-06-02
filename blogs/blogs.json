@@ -2,12 +2,17 @@
   "repo": "foursquare",
   "feeds": [
     {
-      "source": "https://location.foursquare.com/resources/blog/",
-      "feed_url": "https://location.foursquare.com/resources/blog/feed/",
-      "title": "Comments on:",
-      "saved": 0
+      "source": "https://location.foursquare.com/resources/blog/feed/",
+      "error": "HTTPError"
+    },
+    {
+      "source": "https://discord.gg/foursquare",
+      "feed_url": "https://discord.gg/foursquare",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
   "post_count": 10,
-  "fetched": "2026-05-17T20:20:35Z"
+  "fetched": "2026-06-01T23:35:02Z"
 }
