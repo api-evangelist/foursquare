@@ -4,10 +4,12 @@
   "title": "FoursquarePlace",
   "description": "A point of interest returned by the Foursquare Places API.",
   "type": "object",
-  "required": ["fsq_id", "name"],
+  "required": ["fsq_place_id", "name"],
   "properties": {
-    "fsq_id": { "type": "string", "description": "Stable Foursquare place identifier." },
+    "fsq_place_id": { "type": "string", "description": "Stable Foursquare place identifier." },
     "name": { "type": "string" },
+    "latitude": { "type": "number" },
+    "longitude": { "type": "number" },
     "location": {
       "type": "object",
       "properties": {
@@ -15,20 +17,11 @@
         "locality": { "type": "string" },
         "region": { "type": "string" },
         "postcode": { "type": "string" },
+        "admin_region": { "type": "string" },
+        "post_town": { "type": "string" },
+        "po_box": { "type": "string" },
         "country": { "type": "string" },
         "formatted_address": { "type": "string" }
-      }
-    },
-    "geocodes": {
-      "type": "object",
-      "properties": {
-        "main": {
-          "type": "object",
-          "properties": {
-            "latitude": { "type": "number" },
-            "longitude": { "type": "number" }
-          }
-        }
       }
     },
     "categories": {
@@ -36,8 +29,10 @@
       "items": {
         "type": "object",
         "properties": {
-          "id": { "type": "integer" },
-          "name": { "type": "string" }
+          "fsq_category_id": { "type": "string" },
+          "name": { "type": "string" },
+          "short_name": { "type": "string" },
+          "plural_name": { "type": "string" }
         }
       }
     },
@@ -46,14 +41,27 @@
       "items": {
         "type": "object",
         "properties": {
-          "id": { "type": "string" },
+          "fsq_chain_id": { "type": "string" },
           "name": { "type": "string" }
         }
       }
     },
     "distance": { "type": "integer" },
     "rating": { "type": "number" },
+    "price": { "type": "integer", "minimum": 1, "maximum": 4 },
     "popularity": { "type": "number" },
-    "verified": { "type": "boolean" }
+    "verified": { "type": "boolean" },
+    "tel": { "type": "string" },
+    "email": { "type": "string" },
+    "website": { "type": "string" },
+    "tastes": { "type": "array", "items": { "type": "string" } },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "total_photos": { "type": "integer" },
+        "total_ratings": { "type": "integer" },
+        "total_tips": { "type": "integer" }
+      }
+    }
   }
 }

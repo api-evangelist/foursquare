@@ -1,0 +1,207 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Foursquare Places API — Search
+  description: 'Search surface of the Foursquare Places API. 1 operation(s). Lead operation: Search For
+    Places. Self-contained Naftiko capability covering one Foursquare business surface.'
+  tags:
+  - Foursquare
+  - Places
+  - Search
+  created: '2026-05-04'
+  modified: '2026-06-02'
+binds:
+- namespace: env
+  keys:
+    FOURSQUARE_SERVICE_TOKEN: FOURSQUARE_SERVICE_TOKEN
+capability:
+  consumes:
+  - type: http
+    namespace: places-search
+    baseUri: https://places-api.foursquare.com
+    description: Foursquare Places API — Search business capability. Self-contained, no shared references.
+    authentication:
+      type: bearer
+      token: '{{env.FOURSQUARE_SERVICE_TOKEN}}'
+    resources:
+    - name: places-search
+      path: /places/search
+      operations:
+      - name: searchPlaces
+        method: GET
+        description: Search For Places
+        inputParameters:
+        - name: X-Places-Api-Version
+          in: header
+          type: string
+          required: true
+          description: Dated Places API version header.
+        - name: query
+          in: query
+          type: string
+          required: false
+          description: Free-text search term (e.g., "coffee").
+        - name: ll
+          in: query
+          type: string
+          required: false
+          description: Latitude,longitude pair (e.g., "40.7128,-74.0060").
+        - name: near
+          in: query
+          type: string
+          required: false
+          description: Geocodable text location (e.g., "New York, NY").
+        - name: radius
+          in: query
+          type: integer
+          required: false
+          description: Search radius in meters (0-100000).
+        - name: ne
+          in: query
+          type: string
+          required: false
+          description: Northeast corner of a bounding box (lat,lng).
+        - name: sw
+          in: query
+          type: string
+          required: false
+          description: Southwest corner of a bounding box (lat,lng).
+        - name: fsq_category_ids
+          in: query
+          type: string
+          required: false
+          description: Comma-separated Foursquare category ids.
+        - name: fsq_chain_ids
+          in: query
+          type: string
+          required: false
+          description: Comma-separated Foursquare chain ids to include.
+        - name: exclude_fsq_chain_ids
+          in: query
+          type: string
+          required: false
+          description: Comma-separated Foursquare chain ids to exclude.
+        - name: exclude_all_chains
+          in: query
+          type: boolean
+          required: false
+          description: Return only non-chain (independent) places.
+        - name: min_price
+          in: query
+          type: integer
+          required: false
+          description: Minimum price tier (1-4).
+        - name: max_price
+          in: query
+          type: integer
+          required: false
+          description: Maximum price tier (1-4).
+        - name: open_now
+          in: query
+          type: boolean
+          required: false
+          description: Restrict to places currently open.
+        - name: open_at
+          in: query
+          type: string
+          required: false
+          description: Restrict to places open at a time in DOWTHHMM format (e.g., "1T2130").
+        - name: fields
+          in: query
+          type: string
+          required: false
+          description: Comma-separated list of fields to include in each result.
+        - name: limit
+          in: query
+          type: integer
+          required: false
+          description: limit
+        - name: sort
+          in: query
+          type: string
+          required: false
+          description: sort
+        - name: tel_format
+          in: query
+          type: string
+          required: false
+          description: tel_format
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: places-search-rest
+    port: 8080
+    description: REST adapter for Foursquare Places API — Search. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/places-search
+      name: places-search
+      description: REST surface for Search For Places.
+      operations:
+      - method: GET
+        name: searchPlaces
+        description: Search For Places
+        call: places-search.searchPlaces
+        with:
+          X-Places-Api-Version: rest.X-Places-Api-Version
+          query: rest.query
+          ll: rest.ll
+          near: rest.near
+          radius: rest.radius
+          ne: rest.ne
+          sw: rest.sw
+          fsq_category_ids: rest.fsq_category_ids
+          fsq_chain_ids: rest.fsq_chain_ids
+          exclude_fsq_chain_ids: rest.exclude_fsq_chain_ids
+          exclude_all_chains: rest.exclude_all_chains
+          min_price: rest.min_price
+          max_price: rest.max_price
+          open_now: rest.open_now
+          open_at: rest.open_at
+          fields: rest.fields
+          limit: rest.limit
+          sort: rest.sort
+          tel_format: rest.tel_format
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: places-search-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Foursquare Places API — Search. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: search-places
+      description: Search For Places
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: places-search.searchPlaces
+      with:
+        X-Places-Api-Version: tools.X-Places-Api-Version
+        query: tools.query
+        ll: tools.ll
+        near: tools.near
+        radius: tools.radius
+        ne: tools.ne
+        sw: tools.sw
+        fsq_category_ids: tools.fsq_category_ids
+        fsq_chain_ids: tools.fsq_chain_ids
+        exclude_fsq_chain_ids: tools.exclude_fsq_chain_ids
+        exclude_all_chains: tools.exclude_all_chains
+        min_price: tools.min_price
+        max_price: tools.max_price
+        open_now: tools.open_now
+        open_at: tools.open_at
+        fields: tools.fields
+        limit: tools.limit
+        sort: tools.sort
+        tel_format: tools.tel_format
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,14 +1,21 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "#/components/schemas/Place",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-place-schema.json",
   "title": "Place",
+  "description": "Place schema from Foursquare Places API",
   "type": "object",
   "properties": {
-    "fsq_id": {
+    "fsq_place_id": {
       "type": "string"
     },
     "name": {
       "type": "string"
+    },
+    "latitude": {
+      "type": "number"
+    },
+    "longitude": {
+      "type": "number"
     },
     "location": {
       "type": "object",
@@ -25,6 +32,15 @@
         "postcode": {
           "type": "string"
         },
+        "admin_region": {
+          "type": "string"
+        },
+        "post_town": {
+          "type": "string"
+        },
+        "po_box": {
+          "type": "string"
+        },
         "country": {
           "type": "string"
         },
@@ -33,32 +49,33 @@
         }
       }
     },
-    "geocodes": {
-      "type": "object",
-      "properties": {
-        "main": {
-          "type": "object",
-          "properties": {
-            "latitude": {
-              "type": "number"
-            },
-            "longitude": {
-              "type": "number"
-            }
-          }
-        }
-      }
-    },
     "categories": {
       "type": "array",
       "items": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer"
+          "fsq_category_id": {
+            "type": "string"
           },
           "name": {
             "type": "string"
+          },
+          "short_name": {
+            "type": "string"
+          },
+          "plural_name": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "object",
+            "properties": {
+              "prefix": {
+                "type": "string"
+              },
+              "suffix": {
+                "type": "string"
+              }
+            }
           }
         }
       }
@@ -68,7 +85,7 @@
       "items": {
         "type": "object",
         "properties": {
-          "id": {
+          "fsq_chain_id": {
             "type": "string"
           },
           "name": {
@@ -83,11 +100,150 @@
     "rating": {
       "type": "number"
     },
+    "price": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 4
+    },
     "popularity": {
       "type": "number"
     },
     "verified": {
       "type": "boolean"
+    },
+    "date_closed": {
+      "type": "string"
+    },
+    "tel": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "social_media": {
+      "type": "object",
+      "properties": {
+        "facebook_id": {
+          "type": "string"
+        },
+        "instagram": {
+          "type": "string"
+        },
+        "twitter": {
+          "type": "string"
+        }
+      }
+    },
+    "hours": {
+      "type": "object",
+      "properties": {
+        "display": {
+          "type": "string"
+        },
+        "is_local_holiday": {
+          "type": "boolean"
+        },
+        "open_now": {
+          "type": "boolean"
+        }
+      }
+    },
+    "attributes": {
+      "type": "object",
+      "properties": {
+        "restroom": {
+          "type": "string"
+        },
+        "outdoor_seating": {
+          "type": "string"
+        },
+        "atm": {
+          "type": "string"
+        },
+        "parking": {
+          "type": "object"
+        },
+        "wifi": {
+          "type": "string"
+        },
+        "delivery": {
+          "type": "string"
+        },
+        "reservations": {
+          "type": "string"
+        },
+        "credit_cards": {
+          "type": "object"
+        }
+      }
+    },
+    "tastes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "total_photos": {
+          "type": "integer"
+        },
+        "total_ratings": {
+          "type": "integer"
+        },
+        "total_tips": {
+          "type": "integer"
+        }
+      }
+    },
+    "photos": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "prefix": {
+            "type": "string"
+          },
+          "suffix": {
+            "type": "string"
+          },
+          "width": {
+            "type": "integer"
+          },
+          "height": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "tips": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
     }
   }
 }

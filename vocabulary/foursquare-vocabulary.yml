@@ -9,13 +9,14 @@ terms:
     definition: >-
       A point of interest in the Foursquare graph (POI) representing a
       business, landmark, residence, or geography.
-  - term: fsq_id
+  - term: fsq_place_id
     definition: >-
-      Stable globally unique identifier assigned by Foursquare to each place.
+      Stable globally unique identifier assigned by Foursquare to each place
+      in the current Places API (replaces the legacy fsq_id).
   - term: Geocode
     definition: >-
-      Latitude/longitude pair associated with a place. The "main" geocode is
-      the canonical centroid.
+      Latitude/longitude coordinate of a place, returned as top-level
+      latitude and longitude fields on the place object.
   - term: Category
     definition: >-
       A taxonomy node from the Foursquare category hierarchy describing the
@@ -39,6 +40,27 @@ terms:
     definition: >-
       Process of resolving raw coordinates or text addresses to specific
       Foursquare POIs.
+  - term: Place Snap
+    definition: >-
+      The /geotagging/candidates capability that returns the most likely
+      places a device is located at given a coordinate and accuracy.
+  - term: Place Match
+    definition: >-
+      The /places/match capability that resolves an external POI record
+      (name plus address) to the canonical Foursquare place and returns a
+      match_score between 0 and 1.
+  - term: Ask
+    definition: >-
+      The /places/ask natural-language search capability that returns ranked
+      places answering a free-form question, each with justifications.
+  - term: Justification
+    definition: >-
+      A human-readable reason returned by the Ask endpoint explaining why a
+      place matches the natural-language query.
+  - term: Match Score
+    definition: >-
+      A confidence value from 0 to 1 returned by Place Match indicating the
+      strength of the match between an input record and a Foursquare place.
   - term: Placemaker
     definition: >-
       Foursquare's tool for submitting and curating business locations in

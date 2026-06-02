@@ -1,7 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "#/components/schemas/Tip",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-tip-schema.json",
   "title": "Tip",
+  "description": "Tip schema from Foursquare Places API",
   "type": "object",
   "properties": {
     "id": {

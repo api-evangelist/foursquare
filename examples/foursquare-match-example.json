@@ -1,0 +1,20 @@
+{
+  "place": {
+    "fsq_place_id": "4b2f1b3df964a520f5e924e3",
+    "name": "Wrigley Field",
+    "match_score": 0.98,
+    "latitude": 41.948437,
+    "longitude": -87.655334,
+    "location": {
+      "address": "1060 W Addison St",
+      "locality": "Chicago",
+      "region": "IL",
+      "postcode": "60613",
+      "country": "US",
+      "formatted_address": "1060 W Addison St, Chicago, IL 60613"
+    },
+    "categories": [
+      { "fsq_category_id": "4bf58dd8d48988d18d941735", "name": "Baseball Stadium" }
+    ]
+  }
+}

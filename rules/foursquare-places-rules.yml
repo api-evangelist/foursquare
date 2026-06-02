@@ -4,20 +4,28 @@ description: >-
   Operational rules and constraints for working with the Foursquare Places API,
   covering authentication, query parameters, rate limits, attribution, and
   data caching.
-modified: '2026-04-28'
+modified: '2026-06-02'
 rules:
   - id: service-key-required
     title: Service Key Required
     description: >-
-      All Places API requests require a Service Key supplied via the
-      Authorization header. The current Places API uses Bearer scheme; the
-      legacy v3 endpoint accepts the raw key.
+      All Places API requests require a Service Key supplied as a Bearer token
+      in the Authorization header (Authorization: Bearer <service-key>) against
+      the host https://places-api.foursquare.com.
+    severity: required
+  - id: api-version-header-required
+    title: Send The API Version Header
+    description: >-
+      Every Places API request must include the X-Places-Api-Version header
+      with a dated version string (e.g., 2025-06-17). Requests without it are
+      rejected or default to an unintended version.
     severity: required
   - id: location-required
     title: Provide Location Context
     description: >-
-      Place search and nearby endpoints require either a ll (lat,lng) pair or
-      a near textual location. Without one, results will be empty or rejected.
+      Place search and geotagging endpoints require a location signal: a ll
+      (lat,lng) pair, a near/location textual locality, or a bounding box
+      (ne/sw). Without one, results will be empty or rejected.
     severity: required
   - id: radius-cap
     title: Radius Limit
@@ -65,9 +73,10 @@ rules:
       query and yields better recall and precision; consult the category
       taxonomy.
     severity: recommended
-  - id: legacy-v3-deprecation
-    title: Migrate Off Legacy v3
+  - id: use-place-id-field
+    title: Use fsq_place_id
     description: >-
-      api.foursquare.com/v3 is the legacy host; new development should target
-      places-api.foursquare.com with the Bearer Service Key scheme.
-    severity: recommended
+      The current Places API identifies places with fsq_place_id and category
+      nodes with fsq_category_id. The legacy fsq_id / numeric category id
+      fields are no longer returned by places-api.foursquare.com.
+    severity: required

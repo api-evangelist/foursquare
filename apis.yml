@@ -39,12 +39,13 @@ apis:
       url: https://docs.foursquare.com/developer/reference/foursquare-api-reference
     - type: SignUp
       url: https://foursquare.com/developers/
+    - type: Tools
+      title: MCP Server
+      url: https://github.com/foursquare/foursquare-places-mcp
     - type: OpenAPI
       url: https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/openapi/foursquare-places-openapi.yml
     - type: Rules
       url: https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/rules/foursquare-places-rules.yml
-    - type: Capabilities
-      url: https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/capabilities/foursquare-places-capabilities.yml
     - type: JSONSchema
       name: Place Schema
       url: https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-place.json
@@ -61,14 +62,29 @@ apis:
     - type: Example
       name: Search Response Example
       url: https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-search-example.json
+    - type: Example
+      name: Place Match Example
+      url: https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-match-example.json
+    - type: Example
+      name: Ask Response Example
+      url: https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-ask-example.json
+    - type: Example
+      name: Geotagging Candidates Example
+      url: https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-geotagging-example.json
     - type: NaftikoCapability
-      url: capabilities/places-autocomplete.yaml
+      url: capabilities/places-search.yaml
     - type: NaftikoCapability
       url: capabilities/places-details.yaml
     - type: NaftikoCapability
-      url: capabilities/places-photos.yaml
+      url: capabilities/places-autocomplete.yaml
     - type: NaftikoCapability
-      url: capabilities/places-search.yaml
+      url: capabilities/places-match.yaml
+    - type: NaftikoCapability
+      url: capabilities/places-ask.yaml
+    - type: NaftikoCapability
+      url: capabilities/places-geotagging.yaml
+    - type: NaftikoCapability
+      url: capabilities/places-photos.yaml
     - type: NaftikoCapability
       url: capabilities/places-tips.yaml
   - aid: foursquare:movement-sdk
@@ -119,6 +135,24 @@ apis:
 common:
   - type: GitHubOrganization
     url: https://github.com/foursquare
+  - type: Tools
+    title: MCP Server
+    url: https://github.com/foursquare/foursquare-places-mcp
+  - type: SDK
+    name: Movement SDK (iOS - Swift Package Manager)
+    url: https://github.com/foursquare/movementsdk-ios-spm
+  - type: SDK
+    name: Movement SDK (React Native)
+    url: https://github.com/foursquare/movement-sdk-react-native
+  - type: SDK
+    name: Spatial / Studio SDK Examples
+    url: https://github.com/foursquare/fsq-studio-sdk-examples
+  - type: SampleCode
+    name: Places API Samples
+    url: https://github.com/foursquare/foursquare-places-api-samples
+  - type: Postman
+    name: Places API Postman Collection
+    url: https://github.com/foursquare/Place-API-Postman-Collection
   - type: LinkedIn
     url: https://www.linkedin.com/company/location-foursquare
   - type: Website

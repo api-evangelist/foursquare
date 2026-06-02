@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "justifications": [
+        "Highly rated cocktail lounge in Williamsburg",
+        "Known for craft cocktails and an intimate atmosphere"
+      ],
+      "place": {
+        "fsq_place_id": "5a1b2c3d4e5f60718293a4b5",
+        "name": "The Richardson",
+        "latitude": 40.71704,
+        "longitude": -73.95215,
+        "location": {
+          "address": "451 Graham Ave",
+          "locality": "Brooklyn",
+          "region": "NY",
+          "postcode": "11222",
+          "country": "US",
+          "formatted_address": "451 Graham Ave, Brooklyn, NY 11222"
+        },
+        "categories": [
+          { "fsq_category_id": "4bf58dd8d48988d11e941735", "name": "Cocktail Bar" }
+        ],
+        "rating": 8.9,
+        "price": 2
+      }
+    }
+  ]
+}

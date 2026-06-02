@@ -1,0 +1,123 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Foursquare Places API — Geotagging
+  description: 'Geotagging surface of the Foursquare Places API. 1 operation(s). Lead operation: Find
+    Geotagging Candidates. Self-contained Naftiko capability covering one Foursquare business surface.'
+  tags:
+  - Foursquare
+  - Places
+  - Geotagging
+  created: '2026-05-04'
+  modified: '2026-06-02'
+binds:
+- namespace: env
+  keys:
+    FOURSQUARE_SERVICE_TOKEN: FOURSQUARE_SERVICE_TOKEN
+capability:
+  consumes:
+  - type: http
+    namespace: places-geotagging
+    baseUri: https://places-api.foursquare.com
+    description: Foursquare Places API — Geotagging business capability. Self-contained, no shared references.
+    authentication:
+      type: bearer
+      token: '{{env.FOURSQUARE_SERVICE_TOKEN}}'
+    resources:
+    - name: geotagging-candidates
+      path: /geotagging/candidates
+      operations:
+      - name: geotaggingCandidates
+        method: GET
+        description: Find Geotagging Candidates
+        inputParameters:
+        - name: X-Places-Api-Version
+          in: header
+          type: string
+          required: true
+          description: Dated Places API version header.
+        - name: ll
+          in: query
+          type: string
+          required: false
+          description: Latitude,longitude pair (e.g., "40.74,-74.0").
+        - name: hacc
+          in: query
+          type: number
+          required: false
+          description: Horizontal accuracy radius in meters.
+        - name: altitude
+          in: query
+          type: number
+          required: false
+          description: Altitude in meters above the WGS84 ellipsoid.
+        - name: query
+          in: query
+          type: string
+          required: false
+          description: Optional string matched against candidate place names.
+        - name: limit
+          in: query
+          type: integer
+          required: false
+          description: limit
+        - name: fields
+          in: query
+          type: string
+          required: false
+          description: fields
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: places-geotagging-rest
+    port: 8080
+    description: REST adapter for Foursquare Places API — Geotagging. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/geotagging-candidates
+      name: geotagging-candidates
+      description: REST surface for Find Geotagging Candidates.
+      operations:
+      - method: GET
+        name: geotaggingCandidates
+        description: Find Geotagging Candidates
+        call: places-geotagging.geotaggingCandidates
+        with:
+          X-Places-Api-Version: rest.X-Places-Api-Version
+          ll: rest.ll
+          hacc: rest.hacc
+          altitude: rest.altitude
+          query: rest.query
+          limit: rest.limit
+          fields: rest.fields
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: places-geotagging-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Foursquare Places API — Geotagging. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: find-geotagging-candidates
+      description: Find Geotagging Candidates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: places-geotagging.geotaggingCandidates
+      with:
+        X-Places-Api-Version: tools.X-Places-Api-Version
+        ll: tools.ll
+        hacc: tools.hacc
+        altitude: tools.altitude
+        query: tools.query
+        limit: tools.limit
+        fields: tools.fields
+      outputParameters:
+      - type: object
+        mapping: $.

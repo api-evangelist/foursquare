@@ -1,0 +1,137 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Foursquare Places API — Match
+  description: 'Match surface of the Foursquare Places API. 1 operation(s). Lead operation: Match A Place.
+    Self-contained Naftiko capability covering one Foursquare business surface.'
+  tags:
+  - Foursquare
+  - Places
+  - Match
+  created: '2026-05-04'
+  modified: '2026-06-02'
+binds:
+- namespace: env
+  keys:
+    FOURSQUARE_SERVICE_TOKEN: FOURSQUARE_SERVICE_TOKEN
+capability:
+  consumes:
+  - type: http
+    namespace: places-match
+    baseUri: https://places-api.foursquare.com
+    description: Foursquare Places API — Match business capability. Self-contained, no shared references.
+    authentication:
+      type: bearer
+      token: '{{env.FOURSQUARE_SERVICE_TOKEN}}'
+    resources:
+    - name: places-match
+      path: /places/match
+      operations:
+      - name: matchPlace
+        method: GET
+        description: Match A Place
+        inputParameters:
+        - name: X-Places-Api-Version
+          in: header
+          type: string
+          required: true
+          description: Dated Places API version header.
+        - name: name
+          in: query
+          type: string
+          required: true
+          description: Name of the place to match.
+        - name: address
+          in: query
+          type: string
+          required: true
+          description: Street address (e.g., "1060 W Addison St").
+        - name: city
+          in: query
+          type: string
+          required: true
+          description: City or locality.
+        - name: state
+          in: query
+          type: string
+          required: false
+          description: State or region.
+        - name: postal_code
+          in: query
+          type: string
+          required: false
+          description: postal_code
+        - name: cc
+          in: query
+          type: string
+          required: true
+          description: ISO 3166-1 alpha-2 country code (e.g., "US").
+        - name: ll
+          in: query
+          type: string
+          required: false
+          description: Latitude,longitude pair to disambiguate the match.
+        - name: fields
+          in: query
+          type: string
+          required: false
+          description: fields
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: places-match-rest
+    port: 8080
+    description: REST adapter for Foursquare Places API — Match. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/places-match
+      name: places-match
+      description: REST surface for Match A Place.
+      operations:
+      - method: GET
+        name: matchPlace
+        description: Match A Place
+        call: places-match.matchPlace
+        with:
+          X-Places-Api-Version: rest.X-Places-Api-Version
+          name: rest.name
+          address: rest.address
+          city: rest.city
+          state: rest.state
+          postal_code: rest.postal_code
+          cc: rest.cc
+          ll: rest.ll
+          fields: rest.fields
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: places-match-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Foursquare Places API — Match. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: match-place
+      description: Match A Place
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: places-match.matchPlace
+      with:
+        X-Places-Api-Version: tools.X-Places-Api-Version
+        name: tools.name
+        address: tools.address
+        city: tools.city
+        state: tools.state
+        postal_code: tools.postal_code
+        cc: tools.cc
+        ll: tools.ll
+        fields: tools.fields
+      outputParameters:
+      - type: object
+        mapping: $.

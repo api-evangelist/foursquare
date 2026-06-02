@@ -1,0 +1,116 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Foursquare Places API — Ask
+  description: 'Ask surface of the Foursquare Places API. 1 operation(s). Lead operation: Ask For Places.
+    Self-contained Naftiko capability covering one Foursquare business surface.'
+  tags:
+  - Foursquare
+  - Places
+  - Ask
+  created: '2026-05-04'
+  modified: '2026-06-02'
+binds:
+- namespace: env
+  keys:
+    FOURSQUARE_SERVICE_TOKEN: FOURSQUARE_SERVICE_TOKEN
+capability:
+  consumes:
+  - type: http
+    namespace: places-ask
+    baseUri: https://places-api.foursquare.com
+    description: Foursquare Places API — Ask business capability. Self-contained, no shared references.
+    authentication:
+      type: bearer
+      token: '{{env.FOURSQUARE_SERVICE_TOKEN}}'
+    resources:
+    - name: places-ask
+      path: /places/ask
+      operations:
+      - name: askPlaces
+        method: GET
+        description: Ask For Places
+        inputParameters:
+        - name: X-Places-Api-Version
+          in: header
+          type: string
+          required: true
+          description: Dated Places API version header.
+        - name: query
+          in: query
+          type: string
+          required: true
+          description: Natural language query (e.g., "cheap cafes in Williamsburg").
+        - name: ll
+          in: query
+          type: string
+          required: false
+          description: Latitude,longitude pair for "near me" intent.
+        - name: location
+          in: query
+          type: string
+          required: false
+          description: Geocodable locality string (e.g., "Chicago, IL").
+        - name: context
+          in: query
+          type: string
+          required: false
+          description: Query-specific personalization context (e.g., "traveling with kids").
+        - name: fields
+          in: query
+          type: string
+          required: false
+          description: fields
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: places-ask-rest
+    port: 8080
+    description: REST adapter for Foursquare Places API — Ask. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/places-ask
+      name: places-ask
+      description: REST surface for Ask For Places.
+      operations:
+      - method: GET
+        name: askPlaces
+        description: Ask For Places
+        call: places-ask.askPlaces
+        with:
+          X-Places-Api-Version: rest.X-Places-Api-Version
+          query: rest.query
+          ll: rest.ll
+          location: rest.location
+          context: rest.context
+          fields: rest.fields
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: places-ask-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Foursquare Places API — Ask. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: ask-places
+      description: Ask For Places
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: places-ask.askPlaces
+      with:
+        X-Places-Api-Version: tools.X-Places-Api-Version
+        query: tools.query
+        ll: tools.ll
+        location: tools.location
+        context: tools.context
+        fields: tools.fields
+      outputParameters:
+      - type: object
+        mapping: $.

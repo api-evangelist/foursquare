@@ -1,0 +1,23 @@
+{
+  "candidates": [
+    {
+      "fsq_place_id": "4a9c6f10f964a520ba2b20e3",
+      "name": "Bryant Park",
+      "latitude": 40.753739,
+      "longitude": -73.983448,
+      "distance": 12,
+      "location": {
+        "address": "Bryant Park",
+        "locality": "New York",
+        "region": "NY",
+        "postcode": "10018",
+        "country": "US",
+        "formatted_address": "Bryant Park, New York, NY 10018"
+      },
+      "categories": [
+        { "fsq_category_id": "4bf58dd8d48988d163941735", "name": "Park" }
+      ],
+      "popularity": 0.9956
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 {
-  "fsq_id": "4a9c6f10f964a520ba2b20e3",
+  "fsq_place_id": "4a9c6f10f964a520ba2b20e3",
   "name": "Bryant Park",
+  "latitude": 40.753739,
+  "longitude": -73.983448,
   "location": {
     "address": "Bryant Park",
     "locality": "New York",
@@ -9,18 +11,33 @@
     "country": "US",
     "formatted_address": "Bryant Park, New York, NY 10018"
   },
-  "geocodes": {
-    "main": {
-      "latitude": 40.753739,
-      "longitude": -73.983448
-    }
-  },
   "categories": [
-    { "id": 16032, "name": "Park" }
+    {
+      "fsq_category_id": "4bf58dd8d48988d163941735",
+      "name": "Park",
+      "short_name": "Park",
+      "plural_name": "Parks",
+      "icon": {
+        "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+        "suffix": ".png"
+      }
+    }
   ],
   "chains": [],
   "distance": 142,
   "rating": 9.3,
+  "price": 1,
   "popularity": 0.9956,
-  "verified": true
+  "verified": true,
+  "tel": "+1 212-768-4242",
+  "website": "https://bryantpark.org",
+  "hours": {
+    "display": "Open until 10:00 PM",
+    "open_now": true
+  },
+  "stats": {
+    "total_photos": 12483,
+    "total_ratings": 9210,
+    "total_tips": 642
+  }
 }

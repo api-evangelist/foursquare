@@ -3,13 +3,13 @@
   "providerId": "foursquare",
   "kind": "json-structure",
   "description": "Structural overview of the Foursquare API surface; extracted from openapi/.",
-  "schemaCount": 5,
-  "operationCount": 6,
+  "schemaCount": 8,
+  "operationCount": 8,
   "schemas": [
     {
       "name": "Place",
       "type": "object",
-      "propertyCount": 10,
+      "propertyCount": 23,
       "required": []
     },
     {
@@ -20,6 +20,24 @@
     },
     {
       "name": "AutocompleteResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "PlaceMatchResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "AskResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "GeotaggingResponse",
       "type": "object",
       "propertyCount": 1,
       "required": []
@@ -42,54 +60,72 @@
       "method": "GET",
       "path": "/places/search",
       "operationId": "searchPlaces",
-      "summary": "Search for places",
+      "summary": "Search For Places",
       "tags": [
-        "search"
-      ]
-    },
-    {
-      "method": "GET",
-      "path": "/places/nearby",
-      "operationId": "nearbyPlaces",
-      "summary": "Nearby places",
-      "tags": [
-        "search"
+        "Search"
       ]
     },
     {
       "method": "GET",
       "path": "/autocomplete",
       "operationId": "autocomplete",
-      "summary": "Autocomplete query suggestions",
+      "summary": "Autocomplete Query Suggestions",
       "tags": [
-        "autocomplete"
+        "Autocomplete"
       ]
     },
     {
       "method": "GET",
-      "path": "/places/{fsq_id}",
+      "path": "/places/match",
+      "operationId": "matchPlace",
+      "summary": "Match A Place",
+      "tags": [
+        "Match"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/places/ask",
+      "operationId": "askPlaces",
+      "summary": "Ask For Places",
+      "tags": [
+        "Ask"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/geotagging/candidates",
+      "operationId": "geotaggingCandidates",
+      "summary": "Find Geotagging Candidates",
+      "tags": [
+        "Geotagging"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/places/{fsq_place_id}",
       "operationId": "getPlace",
-      "summary": "Place details",
+      "summary": "Get Place Details",
       "tags": [
-        "details"
+        "Details"
       ]
     },
     {
       "method": "GET",
-      "path": "/places/{fsq_id}/photos",
+      "path": "/places/{fsq_place_id}/photos",
       "operationId": "getPlacePhotos",
-      "summary": "Place photos",
+      "summary": "Get Place Photos",
       "tags": [
-        "photos"
+        "Photos"
       ]
     },
     {
       "method": "GET",
-      "path": "/places/{fsq_id}/tips",
+      "path": "/places/{fsq_place_id}/tips",
       "operationId": "getPlaceTips",
-      "summary": "Place tips",
+      "summary": "Get Place Tips",
       "tags": [
-        "tips"
+        "Tips"
       ]
     }
   ]
