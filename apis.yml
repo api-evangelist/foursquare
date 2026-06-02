@@ -8,8 +8,9 @@ position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 created: '2025-03-01'
-modified: '2026-05-19'
+modified: '2026-06-02'
 tags:
+  - Restaurant
   - Locations
   - Places
   - Geocoding
