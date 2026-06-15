@@ -1,0 +1,513 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Foursquare Places API",
+    "version": "2025-06-17"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search For Places",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://places-api.foursquare.com/places/search",
+            "headers": [
+              {
+                "name": "X-Places-Api-Version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Free-text search term (e.g., \"coffee\")."
+              },
+              {
+                "name": "ll",
+                "value": "",
+                "type": "query",
+                "description": "Latitude,longitude pair (e.g., \"40.7128,-74.0060\")."
+              },
+              {
+                "name": "near",
+                "value": "",
+                "type": "query",
+                "description": "Geocodable text location (e.g., \"New York, NY\")."
+              },
+              {
+                "name": "radius",
+                "value": "",
+                "type": "query",
+                "description": "Search radius in meters (0-100000)."
+              },
+              {
+                "name": "ne",
+                "value": "",
+                "type": "query",
+                "description": "Northeast corner of a bounding box (lat,lng)."
+              },
+              {
+                "name": "sw",
+                "value": "",
+                "type": "query",
+                "description": "Southwest corner of a bounding box (lat,lng)."
+              },
+              {
+                "name": "fsq_category_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated Foursquare category ids."
+              },
+              {
+                "name": "fsq_chain_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated Foursquare chain ids to include."
+              },
+              {
+                "name": "exclude_fsq_chain_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated Foursquare chain ids to exclude."
+              },
+              {
+                "name": "exclude_all_chains",
+                "value": "",
+                "type": "query",
+                "description": "Return only non-chain (independent) places."
+              },
+              {
+                "name": "min_price",
+                "value": "",
+                "type": "query",
+                "description": "Minimum price tier (1-4)."
+              },
+              {
+                "name": "max_price",
+                "value": "",
+                "type": "query",
+                "description": "Maximum price tier (1-4)."
+              },
+              {
+                "name": "open_now",
+                "value": "",
+                "type": "query",
+                "description": "Restrict to places currently open."
+              },
+              {
+                "name": "open_at",
+                "value": "",
+                "type": "query",
+                "description": "Restrict to places open at a time in DOWTHHMM format (e.g., \"1T2130\")."
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in each result."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tel_format",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Find places that match a query, location, category, chain, price, or radius. Returns a paged list of places ordered by the chosen sort."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Autocomplete",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Autocomplete Query Suggestions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://places-api.foursquare.com/autocomplete",
+            "headers": [
+              {
+                "name": "X-Places-Api-Version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ll",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "radius",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "types",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated set such as place,address,geo."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Return type-ahead suggestions for places, addresses, and geographies."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Match",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Match A Place",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://places-api.foursquare.com/places/match",
+            "headers": [
+              {
+                "name": "X-Places-Api-Version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Name of the place to match."
+              },
+              {
+                "name": "address",
+                "value": "",
+                "type": "query",
+                "description": "Street address (e.g., \"1060 W Addison St\")."
+              },
+              {
+                "name": "city",
+                "value": "",
+                "type": "query",
+                "description": "City or locality."
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query",
+                "description": "State or region."
+              },
+              {
+                "name": "postal_code",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cc",
+                "value": "",
+                "type": "query",
+                "description": "ISO 3166-1 alpha-2 country code (e.g., \"US\")."
+              },
+              {
+                "name": "ll",
+                "value": "",
+                "type": "query",
+                "description": "Latitude,longitude pair to disambiguate the match."
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Match an external POI record (name + address) to the canonical Foursquare place, returning the fsq_place_id and a match_score."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Ask",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Ask For Places",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://places-api.foursquare.com/places/ask",
+            "headers": [
+              {
+                "name": "X-Places-Api-Version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Natural language query (e.g., \"cheap cafes in Williamsburg\")."
+              },
+              {
+                "name": "ll",
+                "value": "",
+                "type": "query",
+                "description": "Latitude,longitude pair for \"near me\" intent."
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "query",
+                "description": "Geocodable locality string (e.g., \"Chicago, IL\")."
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "Query-specific personalization context (e.g., \"traveling with kids\")."
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Natural-language place search. Returns ranked places that answer a free-form question, each with justifications explaining the match."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Geotagging",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Find Geotagging Candidates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://places-api.foursquare.com/geotagging/candidates",
+            "headers": [
+              {
+                "name": "X-Places-Api-Version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ll",
+                "value": "",
+                "type": "query",
+                "description": "Latitude,longitude pair (e.g., \"40.74,-74.0\")."
+              },
+              {
+                "name": "hacc",
+                "value": "",
+                "type": "query",
+                "description": "Horizontal accuracy radius in meters."
+              },
+              {
+                "name": "altitude",
+                "value": "",
+                "type": "query",
+                "description": "Altitude in meters above the WGS84 ellipsoid."
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Optional string matched against candidate place names."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Place Snap. Given a device coordinate (and optional accuracy), return the most likely places the user is currently located at, ordered by likelihood."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Details",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Place Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://places-api.foursquare.com/places/:fsq_place_id",
+            "headers": [
+              {
+                "name": "X-Places-Api-Version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fsq_place_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include."
+              }
+            ]
+          },
+          "docs": "Retrieve details for a specific place by fsq_place_id."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Photos",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Place Photos",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://places-api.foursquare.com/places/:fsq_place_id/photos",
+            "headers": [
+              {
+                "name": "X-Places-Api-Version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fsq_place_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Place Photos"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tips",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Place Tips",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://places-api.foursquare.com/places/:fsq_place_id/tips",
+            "headers": [
+              {
+                "name": "X-Places-Api-Version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fsq_place_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Place Tips"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
