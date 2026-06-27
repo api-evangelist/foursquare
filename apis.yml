@@ -39,7 +39,7 @@ apis:
       - type: Documentation
         name: Places API Reference
         url: https://docs.foursquare.com/developer/reference/foursquare-api-reference
-      - type: SignUp
+      - type: Signup
         url: https://foursquare.com/developers/
       - type: Tools
         title: MCP Server
@@ -60,23 +60,23 @@ apis:
       - type: Vocabulary
         url: >-
           https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/vocabulary/foursquare-vocabulary.yml
-      - type: Example
+      - type: Examples
         name: Place Example
         url: >-
           https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-place-example.json
-      - type: Example
+      - type: Examples
         name: Search Response Example
         url: >-
           https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-search-example.json
-      - type: Example
+      - type: Examples
         name: Place Match Example
         url: >-
           https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-match-example.json
-      - type: Example
+      - type: Examples
         name: Ask Response Example
         url: >-
           https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-ask-example.json
-      - type: Example
+      - type: Examples
         name: Geotagging Candidates Example
         url: >-
           https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-geotagging-example.json
@@ -133,13 +133,13 @@ common:
   - type: Tools
     title: MCP Server
     url: https://github.com/foursquare/foursquare-places-mcp
-  - type: SDK
+  - type: SDKs
     name: Movement SDK (iOS - Swift Package Manager)
     url: https://github.com/foursquare/movementsdk-ios-spm
-  - type: SDK
+  - type: SDKs
     name: Movement SDK (React Native)
     url: https://github.com/foursquare/movement-sdk-react-native
-  - type: SDK
+  - type: SDKs
     name: Spatial / Studio SDK Examples
     url: https://github.com/foursquare/fsq-studio-sdk-examples
   - type: SampleCode
@@ -152,9 +152,9 @@ common:
     url: https://www.linkedin.com/company/location-foursquare
   - type: Website
     url: https://foursquare.com/
-  - type: Developer Portal
+  - type: DeveloperPortal
     url: https://docs.foursquare.com/developer/
-  - type: SignUp
+  - type: Signup
     url: https://foursquare.com/developers/
   - type: Documentation
     url: https://docs.foursquare.com/developer/reference/places-api-overview
@@ -165,7 +165,7 @@ common:
     url: https://location.foursquare.com/resources/blog/
   - type: Integrations
     url: https://foursquare.com/company/partners/
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.foursquare.com/llms.txt
 integrations:
   - name: Button One Image
