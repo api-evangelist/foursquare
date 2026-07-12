@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/foursquare-places-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: serviceKey
+  type: http
+  scheme: bearer
+  description: 'Service Key passed as a Bearer token in the Authorization header ("Authorization:
+    Bearer <service-key>").'
+  sources:
+  - openapi/foursquare-places-openapi.yml
