@@ -128,6 +128,8 @@ apis:
       - type: Documentation
         url: https://docs.foursquare.com/developer/reference/measurement-api-mapi
 common:
+  - type: AgenticAccess
+    url: agentic-access/foursquare-agentic-access.yml
   - type: DomainSecurity
     url: security/foursquare-domain-security.yml
   - type: Authentication
