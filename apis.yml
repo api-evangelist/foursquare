@@ -5,9 +5,22 @@ description: >-
   interest (POI) and provides developer APIs and SDKs for place search, geotagging, autocomplete, audience measurement,
   and visit detection across web and mobile.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: true
+  try_now: true
+  public: false
+  label: Freemium (free trial) · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/foursquare.png
 created: '2025-03-01'
 modified: '2026-06-02'
 tags:
@@ -21,112 +34,438 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: foursquare:places-api
-    name: Foursquare Places API
-    description: >-
-      The Foursquare Places API provides global POI data with endpoints for place search, nearby, autocomplete, place
-      details, photos, tips, geotagging, and Placemaker submissions.
-    humanURL: https://docs.foursquare.com/developer/reference/places-api-overview
-    baseURL: https://places-api.foursquare.com
-    tags:
-      - Places
-      - Search
-      - Geocoding
-      - Autocomplete
-    properties:
-      - type: Documentation
-        url: https://docs.foursquare.com/developer/reference/places-api-overview
-      - type: Documentation
-        name: Places API Reference
-        url: https://docs.foursquare.com/developer/reference/foursquare-api-reference
-      - type: Signup
-        url: https://foursquare.com/developers/
-      - type: Tools
-        title: MCP Server
-        url: https://github.com/foursquare/foursquare-places-mcp
-      - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/openapi/foursquare-places-openapi.yml
-      - type: Rules
-        url: https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/rules/foursquare-places-rules.yml
-      - type: JSONSchema
-        name: Place Schema
-        url: https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-place.json
-      - type: JSONSchema
-        name: Tip Schema
-        url: https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-tip.json
-      - type: JSONLD
-        url: https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-ld/foursquare-context.jsonld
-      - type: Vocabulary
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/vocabulary/foursquare-vocabulary.yml
-      - type: Examples
-        name: Place Example
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-place-example.json
-      - type: Examples
-        name: Search Response Example
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-search-example.json
-      - type: Examples
-        name: Place Match Example
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-match-example.json
-      - type: Examples
-        name: Ask Response Example
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-ask-example.json
-      - type: Examples
-        name: Geotagging Candidates Example
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-geotagging-example.json
-  - aid: foursquare:movement-sdk
-    name: Foursquare Movement SDK
-    description: >-
-      Mobile SDK for iOS, Android, and React Native that translates passive device location signals into visit events
-      using the Foursquare POI graph.
-    humanURL: https://docs.foursquare.com/developer/docs/movement-sdk-overview
-    tags:
-      - Movement
-      - Visits
-      - Mobile SDK
-    properties:
-      - type: Documentation
-        url: https://docs.foursquare.com/developer/docs/movement-sdk-overview
-  - aid: foursquare:movement-geofence-api
-    name: Foursquare Movement Geofence API
-    description: >-
-      Server-side API for managing geofences that trigger events when Movement SDK-equipped devices enter or exit
-      defined places.
-    humanURL: https://docs.foursquare.com/developer/reference/movement-geofence-api
-    tags:
-      - Geofence
-      - Movement
-    properties:
-      - type: Documentation
-        url: https://docs.foursquare.com/developer/reference/movement-geofence-api
-  - aid: foursquare:studio-data-api
-    name: Foursquare Studio Data API
-    description: API for managing datasets, maps, and visualizations within Foursquare Studio for geospatial analytics.
-    humanURL: https://docs.foursquare.com/developer/reference/studio-data-api
-    tags:
-      - Studio
-      - Geospatial
-      - Analytics
-    properties:
-      - type: Documentation
-        url: https://docs.foursquare.com/developer/reference/studio-data-api
-  - aid: foursquare:measurement-api
-    name: Foursquare Measurement API (MAPI)
-    description: API for attribution and audience measurement using Foursquare visit panels.
-    humanURL: https://docs.foursquare.com/developer/reference/measurement-api-mapi
-    tags:
-      - Measurement
-      - Attribution
-      - Analytics
-    properties:
-      - type: Documentation
-        url: https://docs.foursquare.com/developer/reference/measurement-api-mapi
+- aid: foursquare:movement-sdk
+  name: Foursquare Movement SDK
+  description: >-
+    Mobile SDK for iOS, Android, and React Native that translates passive device location signals into
+    visit events using the Foursquare POI graph.
+  humanURL: https://docs.foursquare.com/developer/docs/movement-sdk-overview
+  tags:
+  - Movement
+  - Visits
+  - Mobile SDK
+  properties:
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/docs/movement-sdk-overview
+- aid: foursquare:movement-geofence-api
+  name: Foursquare Movement Geofence API
+  description: >-
+    Server-side API for managing geofences that trigger events when Movement SDK-equipped devices enter
+    or exit defined places.
+  humanURL: https://docs.foursquare.com/developer/reference/movement-geofence-api
+  tags:
+  - Geofence
+  - Movement
+  properties:
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/movement-geofence-api
+- aid: foursquare:studio-data-api
+  name: Foursquare Studio Data API
+  description: >-
+    API for managing datasets, maps, and visualizations within Foursquare Studio for geospatial analytics.
+  humanURL: https://docs.foursquare.com/developer/reference/studio-data-api
+  tags:
+  - Studio
+  - Geospatial
+  - Analytics
+  properties:
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/studio-data-api
+- aid: foursquare:measurement-api
+  name: Foursquare Measurement API (MAPI)
+  description: API for attribution and audience measurement using Foursquare visit panels.
+  humanURL: https://docs.foursquare.com/developer/reference/measurement-api-mapi
+  tags:
+  - Measurement
+  - Attribution
+  - Analytics
+  properties:
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/measurement-api-mapi
+- aid: foursquare:foursquare-ask-api
+  name: Foursquare Ask API
+  description: Natural-language place search with justifications
+  humanURL: https://docs.foursquare.com/developer/reference/places-api-overview
+  baseURL: https://places-api.foursquare.com
+  tags:
+  - Ask
+  properties:
+  - type: OpenAPI
+    url: openapi/foursquare-ask-api-openapi.yml
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/places-api-overview
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/foursquare-api-reference
+  - type: Signup
+    url: https://foursquare.com/developers/
+  - type: Tools
+    url: https://github.com/foursquare/foursquare-places-mcp
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/rules/foursquare-places-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-place.json
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-tip.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-ld/foursquare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/vocabulary/foursquare-vocabulary.yml
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-place-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-search-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-match-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-ask-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-geotagging-example.json
+- aid: foursquare:foursquare-autocomplete-api
+  name: Foursquare Autocomplete API
+  description: Type-ahead search for places, addresses, and geographies
+  humanURL: https://docs.foursquare.com/developer/reference/places-api-overview
+  baseURL: https://places-api.foursquare.com
+  tags:
+  - Autocomplete
+  properties:
+  - type: OpenAPI
+    url: openapi/foursquare-autocomplete-api-openapi.yml
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/places-api-overview
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/foursquare-api-reference
+  - type: Signup
+    url: https://foursquare.com/developers/
+  - type: Tools
+    url: https://github.com/foursquare/foursquare-places-mcp
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/rules/foursquare-places-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-place.json
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-tip.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-ld/foursquare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/vocabulary/foursquare-vocabulary.yml
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-place-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-search-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-match-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-ask-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-geotagging-example.json
+- aid: foursquare:foursquare-details-api
+  name: Foursquare Details API
+  description: Retrieve attributes for a specific place
+  humanURL: https://docs.foursquare.com/developer/reference/places-api-overview
+  baseURL: https://places-api.foursquare.com
+  tags:
+  - Details
+  properties:
+  - type: OpenAPI
+    url: openapi/foursquare-details-api-openapi.yml
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/places-api-overview
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/foursquare-api-reference
+  - type: Signup
+    url: https://foursquare.com/developers/
+  - type: Tools
+    url: https://github.com/foursquare/foursquare-places-mcp
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/rules/foursquare-places-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-place.json
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-tip.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-ld/foursquare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/vocabulary/foursquare-vocabulary.yml
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-place-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-search-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-match-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-ask-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-geotagging-example.json
+- aid: foursquare:foursquare-geotagging-api
+  name: Foursquare Geotagging API
+  description: Resolve a coordinate to the most likely place (Place Snap)
+  humanURL: https://docs.foursquare.com/developer/reference/places-api-overview
+  baseURL: https://places-api.foursquare.com
+  tags:
+  - Geotagging
+  properties:
+  - type: OpenAPI
+    url: openapi/foursquare-geotagging-api-openapi.yml
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/places-api-overview
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/foursquare-api-reference
+  - type: Signup
+    url: https://foursquare.com/developers/
+  - type: Tools
+    url: https://github.com/foursquare/foursquare-places-mcp
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/rules/foursquare-places-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-place.json
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-tip.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-ld/foursquare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/vocabulary/foursquare-vocabulary.yml
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-place-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-search-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-match-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-ask-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-geotagging-example.json
+- aid: foursquare:foursquare-match-api
+  name: Foursquare Match API
+  description: Match an external POI record to a Foursquare place
+  humanURL: https://docs.foursquare.com/developer/reference/places-api-overview
+  baseURL: https://places-api.foursquare.com
+  tags:
+  - Match
+  properties:
+  - type: OpenAPI
+    url: openapi/foursquare-match-api-openapi.yml
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/places-api-overview
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/foursquare-api-reference
+  - type: Signup
+    url: https://foursquare.com/developers/
+  - type: Tools
+    url: https://github.com/foursquare/foursquare-places-mcp
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/rules/foursquare-places-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-place.json
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-tip.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-ld/foursquare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/vocabulary/foursquare-vocabulary.yml
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-place-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-search-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-match-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-ask-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-geotagging-example.json
+- aid: foursquare:foursquare-photos-api
+  name: Foursquare Photos API
+  description: Photos associated with a place
+  humanURL: https://docs.foursquare.com/developer/reference/places-api-overview
+  baseURL: https://places-api.foursquare.com
+  tags:
+  - Photos
+  properties:
+  - type: OpenAPI
+    url: openapi/foursquare-photos-api-openapi.yml
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/places-api-overview
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/foursquare-api-reference
+  - type: Signup
+    url: https://foursquare.com/developers/
+  - type: Tools
+    url: https://github.com/foursquare/foursquare-places-mcp
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/rules/foursquare-places-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-place.json
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-tip.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-ld/foursquare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/vocabulary/foursquare-vocabulary.yml
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-place-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-search-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-match-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-ask-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-geotagging-example.json
+- aid: foursquare:foursquare-search-api
+  name: Foursquare Search API
+  description: Find and explore places
+  humanURL: https://docs.foursquare.com/developer/reference/places-api-overview
+  baseURL: https://places-api.foursquare.com
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/foursquare-search-api-openapi.yml
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/places-api-overview
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/foursquare-api-reference
+  - type: Signup
+    url: https://foursquare.com/developers/
+  - type: Tools
+    url: https://github.com/foursquare/foursquare-places-mcp
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/rules/foursquare-places-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-place.json
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-tip.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-ld/foursquare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/vocabulary/foursquare-vocabulary.yml
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-place-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-search-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-match-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-ask-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-geotagging-example.json
+- aid: foursquare:foursquare-tips-api
+  name: Foursquare Tips API
+  description: User tips associated with a place
+  humanURL: https://docs.foursquare.com/developer/reference/places-api-overview
+  baseURL: https://places-api.foursquare.com
+  tags:
+  - Tips
+  properties:
+  - type: OpenAPI
+    url: openapi/foursquare-tips-api-openapi.yml
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/places-api-overview
+  - type: Documentation
+    url: https://docs.foursquare.com/developer/reference/foursquare-api-reference
+  - type: Signup
+    url: https://foursquare.com/developers/
+  - type: Tools
+    url: https://github.com/foursquare/foursquare-places-mcp
+  - type: Rules
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/rules/foursquare-places-rules.yml
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-place.json
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-tip.json
+  - type: JSONLD
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-ld/foursquare-context.jsonld
+  - type: Vocabulary
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/vocabulary/foursquare-vocabulary.yml
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-place-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-search-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-match-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-ask-example.json
+  - type: Examples
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-geotagging-example.json
 common:
   - type: AgenticAccess
     url: agentic-access/foursquare-agentic-access.yml
