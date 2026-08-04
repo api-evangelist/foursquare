@@ -1,0 +1,28 @@
+{
+  "provider": "foursquare",
+  "sources": [
+    "foursquare-ask-api-openapi.yml",
+    "foursquare-autocomplete-api-openapi.yml",
+    "foursquare-details-api-openapi.yml",
+    "foursquare-geotagging-api-openapi.yml",
+    "foursquare-match-api-openapi.yml",
+    "foursquare-photos-api-openapi.yml",
+    "foursquare-search-api-openapi.yml",
+    "foursquare-tips-api-openapi.yml"
+  ],
+  "outputs": [
+    "foursquare-ask-api-openapi.yml",
+    "foursquare-autocomplete-api-openapi.yml",
+    "foursquare-details-api-openapi.yml",
+    "foursquare-geotagging-api-openapi.yml",
+    "foursquare-match-api-openapi.yml",
+    "foursquare-photos-api-openapi.yml",
+    "foursquare-search-api-openapi.yml",
+    "foursquare-tips-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
