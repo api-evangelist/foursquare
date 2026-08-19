@@ -32,7 +32,7 @@ tags:
   - Reviews
   - Movement
 url: https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/apis.yml
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: foursquare:movement-sdk
   name: Foursquare Movement SDK
