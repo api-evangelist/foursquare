@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Foursquare Places Ask Tips API",
+    "version": "2025-06-17"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tips",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Place Tips",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://places-api.foursquare.com/places/:fsq_place_id/tips",
+            "headers": [
+              {
+                "name": "X-Places-Api-Version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fsq_place_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get Place Tips"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

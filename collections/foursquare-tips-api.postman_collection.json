@@ -1,0 +1,168 @@
+{
+  "item": [
+    {
+      "id": "03d4ab33-6fce-4c8c-bd47-c90bd3dbf3af",
+      "name": "Tips",
+      "description": {
+        "content": "User tips associated with a place",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7d162c72-d987-41b0-ab51-c97a0e2da667",
+          "name": "Get Place Tips",
+          "request": {
+            "name": "Get Place Tips",
+            "description": {},
+            "url": {
+              "path": [
+                "places",
+                ":fsq_place_id",
+                "tips"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fsq_place_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Dated Places API version (e.g., \"2025-06-17\").",
+                "key": "X-Places-Api-Version",
+                "value": "2025-06-17"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "04330664-7e76-45bd-8132-9e220c4f415c",
+              "name": "Tips for the place.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "places",
+                    ":fsq_place_id",
+                    "tips"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "10"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fsq_place_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Dated Places API version (e.g., \"2025-06-17\").",
+                    "key": "X-Places-Api-Version",
+                    "value": "2025-06-17"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"created_at\": \"1970-02-02T10:15:59.085Z\",\n    \"text\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"created_at\": \"1953-04-01T14:41:53.670Z\",\n    \"text\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://places-api.foursquare.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a0af110f-b22d-40ca-8207-86faedea9b4b",
+    "name": "Foursquare Places Ask Tips API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Foursquare Places API provides global access to over 100 million points of interest (POI) for place search, details, autocomplete, geotagging (Place Snap), place matching, natural-language Ask search, and photos/tips. All requests target the current host https://places-api.foursquare.com, authenticate with a Service Key as a Bearer token, and must send the X-Places-Api-Version header. This OpenAPI describes the most commonly used endpoints; refer to the official documentation for the complete and authoritative reference.\n\nContact Support:\n Name: Foursquare Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

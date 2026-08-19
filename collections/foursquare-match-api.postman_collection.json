@@ -1,0 +1,213 @@
+{
+  "item": [
+    {
+      "id": "4ee77abb-910b-4673-8660-a63f3f567ded",
+      "name": "Match",
+      "description": {
+        "content": "Match an external POI record to a Foursquare place",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dab911e1-32d1-453c-94c3-04b3c9884943",
+          "name": "Match A Place",
+          "request": {
+            "name": "Match A Place",
+            "description": {
+              "content": "Match an external POI record (name + address) to the canonical Foursquare place, returning the fsq_place_id and a match_score.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "places",
+                "match"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) Name of the place to match."
+                },
+                {
+                  "disabled": false,
+                  "key": "address",
+                  "value": "<string>",
+                  "description": "(Required) Street address (e.g., \"1060 W Addison St\")."
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>",
+                  "description": "(Required) City or locality."
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>",
+                  "description": "State or region."
+                },
+                {
+                  "disabled": false,
+                  "key": "postal_code",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "cc",
+                  "value": "<string>",
+                  "description": "(Required) ISO 3166-1 alpha-2 country code (e.g., \"US\")."
+                },
+                {
+                  "disabled": false,
+                  "key": "ll",
+                  "value": "<string>",
+                  "description": "Latitude,longitude pair to disambiguate the match."
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Dated Places API version (e.g., \"2025-06-17\").",
+                "key": "X-Places-Api-Version",
+                "value": "2025-06-17"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8014b657-4129-45f0-a156-70e5b785a33b",
+              "name": "A matched place with confidence score.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "places",
+                    "match"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "address",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "city",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "state",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "postal_code",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "cc",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ll",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Dated Places API version (e.g., \"2025-06-17\").",
+                    "key": "X-Places-Api-Version",
+                    "value": "2025-06-17"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"place\": {\n    \"fsq_place_id\": \"string\",\n    \"name\": \"string\",\n    \"latitude\": 5619.613832677156,\n    \"longitude\": 3299.7974210162506,\n    \"location\": {\n      \"address\": \"string\",\n      \"locality\": \"string\",\n      \"region\": \"string\",\n      \"postcode\": \"string\",\n      \"admin_region\": \"string\",\n      \"post_town\": \"string\",\n      \"po_box\": \"string\",\n      \"country\": \"string\",\n      \"formatted_address\": \"string\"\n    },\n    \"categories\": [\n      {\n        \"fsq_category_id\": \"string\",\n        \"name\": \"string\",\n        \"short_name\": \"string\",\n        \"plural_name\": \"string\",\n        \"icon\": {\n          \"prefix\": \"string\",\n          \"suffix\": \"string\"\n        }\n      },\n      {\n        \"fsq_category_id\": \"string\",\n        \"name\": \"string\",\n        \"short_name\": \"string\",\n        \"plural_name\": \"string\",\n        \"icon\": {\n          \"prefix\": \"string\",\n          \"suffix\": \"string\"\n        }\n      }\n    ],\n    \"chains\": [\n      {\n        \"fsq_chain_id\": \"string\",\n        \"name\": \"string\"\n      },\n      {\n        \"fsq_chain_id\": \"string\",\n        \"name\": \"string\"\n      }\n    ],\n    \"distance\": 8905,\n    \"rating\": 1689.763007822722,\n    \"price\": 1,\n    \"popularity\": 7980.727721769496,\n    \"verified\": false,\n    \"date_closed\": \"string\",\n    \"tel\": \"string\",\n    \"email\": \"string\",\n    \"website\": \"string\",\n    \"social_media\": {\n      \"facebook_id\": \"string\",\n      \"instagram\": \"string\",\n      \"twitter\": \"string\"\n    },\n    \"hours\": {\n      \"display\": \"string\",\n      \"is_local_holiday\": false,\n      \"open_now\": true\n    },\n    \"attributes\": {\n      \"restroom\": \"string\",\n      \"outdoor_seating\": \"string\",\n      \"atm\": \"string\",\n      \"parking\": {},\n      \"wifi\": \"string\",\n      \"delivery\": \"string\",\n      \"reservations\": \"string\",\n      \"credit_cards\": {}\n    },\n    \"tastes\": [\n      \"string\",\n      \"string\"\n    ],\n    \"stats\": {\n      \"total_photos\": 4423,\n      \"total_ratings\": 9813,\n      \"total_tips\": 3322\n    },\n    \"photos\": [\n      {\n        \"id\": \"string\",\n        \"created_at\": \"2000-03-12T07:46:50.874Z\",\n        \"prefix\": \"string\",\n        \"suffix\": \"string\",\n        \"width\": 4331,\n        \"height\": 1427\n      },\n      {\n        \"id\": \"string\",\n        \"created_at\": \"1971-09-03T20:52:15.584Z\",\n        \"prefix\": \"string\",\n        \"suffix\": \"string\",\n        \"width\": 1827,\n        \"height\": 8674\n      }\n    ],\n    \"tips\": [\n      {\n        \"id\": \"string\",\n        \"created_at\": \"1994-10-23T18:57:50.077Z\",\n        \"text\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"created_at\": \"1962-06-01T16:39:55.421Z\",\n        \"text\": \"string\"\n      }\n    ],\n    \"match_score\": 0.6363888121942689\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://places-api.foursquare.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "38ea0aa5-b3da-48cf-8140-c93fb2ac76cf",
+    "name": "Foursquare Places Ask Match API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Foursquare Places API provides global access to over 100 million points of interest (POI) for place search, details, autocomplete, geotagging (Place Snap), place matching, natural-language Ask search, and photos/tips. All requests target the current host https://places-api.foursquare.com, authenticate with a Service Key as a Bearer token, and must send the X-Places-Api-Version header. This OpenAPI describes the most commonly used endpoints; refer to the official documentation for the complete and authoritative reference.\n\nContact Support:\n Name: Foursquare Developer Support",
+      "type": "text/plain"
+    }
+  }
+}

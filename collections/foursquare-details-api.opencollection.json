@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Foursquare Places Ask Details API",
+    "version": "2025-06-17"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Details",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Place Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://places-api.foursquare.com/places/:fsq_place_id",
+            "headers": [
+              {
+                "name": "X-Places-Api-Version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "fsq_place_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include."
+              }
+            ]
+          },
+          "docs": "Retrieve details for a specific place by fsq_place_id."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

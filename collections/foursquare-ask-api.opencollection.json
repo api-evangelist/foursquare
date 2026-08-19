@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Foursquare Places Ask API",
+    "version": "2025-06-17"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Ask",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Ask For Places",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://places-api.foursquare.com/places/ask",
+            "headers": [
+              {
+                "name": "X-Places-Api-Version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Natural language query (e.g., \"cheap cafes in Williamsburg\")."
+              },
+              {
+                "name": "ll",
+                "value": "",
+                "type": "query",
+                "description": "Latitude,longitude pair for \"near me\" intent."
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "query",
+                "description": "Geocodable locality string (e.g., \"Chicago, IL\")."
+              },
+              {
+                "name": "context",
+                "value": "",
+                "type": "query",
+                "description": "Query-specific personalization context (e.g., \"traveling with kids\")."
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Natural-language place search. Returns ranked places that answer a free-form question, each with justifications explaining the match."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

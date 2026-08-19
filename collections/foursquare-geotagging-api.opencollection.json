@@ -1,0 +1,77 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Foursquare Places Ask Geotagging API",
+    "version": "2025-06-17"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Geotagging",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Find Geotagging Candidates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://places-api.foursquare.com/geotagging/candidates",
+            "headers": [
+              {
+                "name": "X-Places-Api-Version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "ll",
+                "value": "",
+                "type": "query",
+                "description": "Latitude,longitude pair (e.g., \"40.74,-74.0\")."
+              },
+              {
+                "name": "hacc",
+                "value": "",
+                "type": "query",
+                "description": "Horizontal accuracy radius in meters."
+              },
+              {
+                "name": "altitude",
+                "value": "",
+                "type": "query",
+                "description": "Altitude in meters above the WGS84 ellipsoid."
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query",
+                "description": "Optional string matched against candidate place names."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Place Snap. Given a device coordinate (and optional accuracy), return the most likely places the user is currently located at, ordered by likelihood."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

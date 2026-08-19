@@ -1,0 +1,89 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Foursquare Places Ask Match API",
+    "version": "2025-06-17"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Match",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Match A Place",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://places-api.foursquare.com/places/match",
+            "headers": [
+              {
+                "name": "X-Places-Api-Version",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "query",
+                "description": "Name of the place to match."
+              },
+              {
+                "name": "address",
+                "value": "",
+                "type": "query",
+                "description": "Street address (e.g., \"1060 W Addison St\")."
+              },
+              {
+                "name": "city",
+                "value": "",
+                "type": "query",
+                "description": "City or locality."
+              },
+              {
+                "name": "state",
+                "value": "",
+                "type": "query",
+                "description": "State or region."
+              },
+              {
+                "name": "postal_code",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cc",
+                "value": "",
+                "type": "query",
+                "description": "ISO 3166-1 alpha-2 country code (e.g., \"US\")."
+              },
+              {
+                "name": "ll",
+                "value": "",
+                "type": "query",
+                "description": "Latitude,longitude pair to disambiguate the match."
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Match an external POI record (name + address) to the canonical Foursquare place, returning the fsq_place_id and a match_score."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

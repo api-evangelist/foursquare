@@ -1,0 +1,184 @@
+{
+  "item": [
+    {
+      "id": "9f48692e-7677-455b-9b96-f116c5058a2d",
+      "name": "Ask",
+      "description": {
+        "content": "Natural-language place search with justifications",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "971d59c3-53c2-4c0c-b65e-8ee483046465",
+          "name": "Ask For Places",
+          "request": {
+            "name": "Ask For Places",
+            "description": {
+              "content": "Natural-language place search. Returns ranked places that answer a free-form question, each with justifications explaining the match.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "places",
+                "ask"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>",
+                  "description": "(Required) Natural language query (e.g., \"cheap cafes in Williamsburg\")."
+                },
+                {
+                  "disabled": false,
+                  "key": "ll",
+                  "value": "<string>",
+                  "description": "Latitude,longitude pair for \"near me\" intent."
+                },
+                {
+                  "disabled": false,
+                  "key": "location",
+                  "value": "<string>",
+                  "description": "Geocodable locality string (e.g., \"Chicago, IL\")."
+                },
+                {
+                  "disabled": false,
+                  "key": "context",
+                  "value": "<string>",
+                  "description": "Query-specific personalization context (e.g., \"traveling with kids\")."
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) Dated Places API version (e.g., \"2025-06-17\").",
+                "key": "X-Places-Api-Version",
+                "value": "2025-06-17"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1c40bfaf-859a-405e-955d-8988c39adbeb",
+              "name": "Ranked, justified places answering the query.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "places",
+                    "ask"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ll",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "context",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "disabled": false,
+                    "description": "(Required) Dated Places API version (e.g., \"2025-06-17\").",
+                    "key": "X-Places-Api-Version",
+                    "value": "2025-06-17"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"results\": [\n    {\n      \"justifications\": [\n        \"string\",\n        \"string\"\n      ],\n      \"place\": {\n        \"fsq_place_id\": \"string\",\n        \"name\": \"string\",\n        \"latitude\": 9778.954347599722,\n        \"longitude\": 9736.551182037541,\n        \"location\": {\n          \"address\": \"string\",\n          \"locality\": \"string\",\n          \"region\": \"string\",\n          \"postcode\": \"string\",\n          \"admin_region\": \"string\",\n          \"post_town\": \"string\",\n          \"po_box\": \"string\",\n          \"country\": \"string\",\n          \"formatted_address\": \"string\"\n        },\n        \"categories\": [\n          {\n            \"fsq_category_id\": \"string\",\n            \"name\": \"string\",\n            \"short_name\": \"string\",\n            \"plural_name\": \"string\",\n            \"icon\": {\n              \"prefix\": \"string\",\n              \"suffix\": \"string\"\n            }\n          },\n          {\n            \"fsq_category_id\": \"string\",\n            \"name\": \"string\",\n            \"short_name\": \"string\",\n            \"plural_name\": \"string\",\n            \"icon\": {\n              \"prefix\": \"string\",\n              \"suffix\": \"string\"\n            }\n          }\n        ],\n        \"chains\": [\n          {\n            \"fsq_chain_id\": \"string\",\n            \"name\": \"string\"\n          },\n          {\n            \"fsq_chain_id\": \"string\",\n            \"name\": \"string\"\n          }\n        ],\n        \"distance\": 6374,\n        \"rating\": 3498.3705433092714,\n        \"price\": 3,\n        \"popularity\": 9666.556539127721,\n        \"verified\": false,\n        \"date_closed\": \"string\",\n        \"tel\": \"string\",\n        \"email\": \"string\",\n        \"website\": \"string\",\n        \"social_media\": {\n          \"facebook_id\": \"string\",\n          \"instagram\": \"string\",\n          \"twitter\": \"string\"\n        },\n        \"hours\": {\n          \"display\": \"string\",\n          \"is_local_holiday\": true,\n          \"open_now\": false\n        },\n        \"attributes\": {\n          \"restroom\": \"string\",\n          \"outdoor_seating\": \"string\",\n          \"atm\": \"string\",\n          \"parking\": {},\n          \"wifi\": \"string\",\n          \"delivery\": \"string\",\n          \"reservations\": \"string\",\n          \"credit_cards\": {}\n        },\n        \"tastes\": [\n          \"string\",\n          \"string\"\n        ],\n        \"stats\": {\n          \"total_photos\": 3818,\n          \"total_ratings\": 4752,\n          \"total_tips\": 1955\n        },\n        \"photos\": [\n          {\n            \"id\": \"string\",\n            \"created_at\": \"1973-09-11T08:32:22.355Z\",\n            \"prefix\": \"string\",\n            \"suffix\": \"string\",\n            \"width\": 2528,\n            \"height\": 5343\n          },\n          {\n            \"id\": \"string\",\n            \"created_at\": \"1955-08-07T02:19:05.357Z\",\n            \"prefix\": \"string\",\n            \"suffix\": \"string\",\n            \"width\": 9000,\n            \"height\": 8487\n          }\n        ],\n        \"tips\": [\n          {\n            \"id\": \"string\",\n            \"created_at\": \"1957-05-30T13:01:43.657Z\",\n            \"text\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"created_at\": \"1980-07-31T14:05:35.455Z\",\n            \"text\": \"string\"\n          }\n        ]\n      }\n    },\n    {\n      \"justifications\": [\n        \"string\",\n        \"string\"\n      ],\n      \"place\": {\n        \"fsq_place_id\": \"string\",\n        \"name\": \"string\",\n        \"latitude\": 5396.551043769735,\n        \"longitude\": 9289.421674831081,\n        \"location\": {\n          \"address\": \"string\",\n          \"locality\": \"string\",\n          \"region\": \"string\",\n          \"postcode\": \"string\",\n          \"admin_region\": \"string\",\n          \"post_town\": \"string\",\n          \"po_box\": \"string\",\n          \"country\": \"string\",\n          \"formatted_address\": \"string\"\n        },\n        \"categories\": [\n          {\n            \"fsq_category_id\": \"string\",\n            \"name\": \"string\",\n            \"short_name\": \"string\",\n            \"plural_name\": \"string\",\n            \"icon\": {\n              \"prefix\": \"string\",\n              \"suffix\": \"string\"\n            }\n          },\n          {\n            \"fsq_category_id\": \"string\",\n            \"name\": \"string\",\n            \"short_name\": \"string\",\n            \"plural_name\": \"string\",\n            \"icon\": {\n              \"prefix\": \"string\",\n              \"suffix\": \"string\"\n            }\n          }\n        ],\n        \"chains\": [\n          {\n            \"fsq_chain_id\": \"string\",\n            \"name\": \"string\"\n          },\n          {\n            \"fsq_chain_id\": \"string\",\n            \"name\": \"string\"\n          }\n        ],\n        \"distance\": 8816,\n        \"rating\": 3552.8990415044505,\n        \"price\": 1,\n        \"popularity\": 3556.2420216918667,\n        \"verified\": true,\n        \"date_closed\": \"string\",\n        \"tel\": \"string\",\n        \"email\": \"string\",\n        \"website\": \"string\",\n        \"social_media\": {\n          \"facebook_id\": \"string\",\n          \"instagram\": \"string\",\n          \"twitter\": \"string\"\n        },\n        \"hours\": {\n          \"display\": \"string\",\n          \"is_local_holiday\": false,\n          \"open_now\": true\n        },\n        \"attributes\": {\n          \"restroom\": \"string\",\n          \"outdoor_seating\": \"string\",\n          \"atm\": \"string\",\n          \"parking\": {},\n          \"wifi\": \"string\",\n          \"delivery\": \"string\",\n          \"reservations\": \"string\",\n          \"credit_cards\": {}\n        },\n        \"tastes\": [\n          \"string\",\n          \"string\"\n        ],\n        \"stats\": {\n          \"total_photos\": 1773,\n          \"total_ratings\": 5337,\n          \"total_tips\": 4017\n        },\n        \"photos\": [\n          {\n            \"id\": \"string\",\n            \"created_at\": \"2004-06-30T13:18:00.931Z\",\n            \"prefix\": \"string\",\n            \"suffix\": \"string\",\n            \"width\": 3617,\n            \"height\": 9179\n          },\n          {\n            \"id\": \"string\",\n            \"created_at\": \"2014-10-26T01:52:58.174Z\",\n            \"prefix\": \"string\",\n            \"suffix\": \"string\",\n            \"width\": 1352,\n            \"height\": 4309\n          }\n        ],\n        \"tips\": [\n          {\n            \"id\": \"string\",\n            \"created_at\": \"1988-03-31T13:01:00.969Z\",\n            \"text\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"created_at\": \"1979-09-21T05:34:48.366Z\",\n            \"text\": \"string\"\n          }\n        ]\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://places-api.foursquare.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "64d98438-ae74-4061-b05c-7cce0d522464",
+    "name": "Foursquare Places Ask API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Foursquare Places API provides global access to over 100 million points of interest (POI) for place search, details, autocomplete, geotagging (Place Snap), place matching, natural-language Ask search, and photos/tips. All requests target the current host https://places-api.foursquare.com, authenticate with a Service Key as a Bearer token, and must send the X-Places-Api-Version header. This OpenAPI describes the most commonly used endpoints; refer to the official documentation for the complete and authoritative reference.\n\nContact Support:\n Name: Foursquare Developer Support",
+      "type": "text/plain"
+    }
+  }
+}
