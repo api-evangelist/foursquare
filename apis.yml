@@ -76,6 +76,10 @@ apis:
   description: API for attribution and audience measurement using Foursquare visit panels.
   humanURL: https://docs.foursquare.com/developer/reference/measurement-api-mapi
   tags:
+  - Measurements
+  - Attribution
+  - Analytics
+  tags_raw:
   - Measurement
   - Attribution
   - Analytics
