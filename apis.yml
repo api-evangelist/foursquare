@@ -38,6 +38,14 @@ created: '2025-03-01'
 modified: '2026-06-02'
 tags:
   - Restaurant
+  - Location
+  - Places
+  - Geocoding
+  - Recommendations
+  - Reviews
+  - Movement
+tags_raw:
+  - Restaurant
   - Locations
   - Places
   - Geocoding
