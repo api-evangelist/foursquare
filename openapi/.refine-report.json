@@ -1,14 +1,7 @@
 {
   "provider": "foursquare",
   "sources": [
-    "foursquare-ask-api-openapi.yml",
-    "foursquare-autocomplete-api-openapi.yml",
-    "foursquare-details-api-openapi.yml",
-    "foursquare-geotagging-api-openapi.yml",
-    "foursquare-match-api-openapi.yml",
-    "foursquare-photos-api-openapi.yml",
-    "foursquare-search-api-openapi.yml",
-    "foursquare-tips-api-openapi.yml"
+    "_original/foursquare-places-openapi.yml"
   ],
   "outputs": [
     "foursquare-ask-api-openapi.yml",
@@ -23,6 +16,19 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "foursquare-places-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "foursquare-ask-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "foursquare-autocomplete-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "foursquare-details-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "foursquare-geotagging-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "foursquare-match-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "foursquare-photos-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "foursquare-search-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "foursquare-tips-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

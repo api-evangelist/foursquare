@@ -1,7 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Foursquare Places Ask Autocomplete API
-  description: The Foursquare Places API provides global access to over 100 million points of interest (POI) for place search, details, autocomplete, geotagging (Place Snap), place matching, natural-language Ask search, and photos/tips. All requests target the current host https://places-api.foursquare.com, authenticate with a Service Key as a Bearer token, and must send the X-Places-Api-Version header. This OpenAPI describes the most commonly used endpoints; refer to the official documentation for the complete and authoritative reference.
+  title: Foursquare Places Autocomplete API
+  description: The Foursquare Places API provides global access to over 100 million points of interest (POI) for place search, details, autocomplete, geotagging (Place Snap), place matching, natural-language Ask search, and photos/tips.
   version: '2025-06-17'
   contact:
     name: Foursquare Developer Support
@@ -62,51 +62,6 @@ paths:
                 $ref: '#/components/schemas/AutocompleteResponse'
 components:
   schemas:
-    Tip:
-      type: object
-      properties:
-        id:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        text:
-          type: string
-    AutocompleteResponse:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            type: object
-            properties:
-              type:
-                type: string
-              text:
-                type: object
-                properties:
-                  primary:
-                    type: string
-                  secondary:
-                    type: string
-              place:
-                $ref: '#/components/schemas/Place'
-    Photo:
-      type: object
-      properties:
-        id:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        prefix:
-          type: string
-        suffix:
-          type: string
-        width:
-          type: integer
-        height:
-          type: integer
     Place:
       type: object
       properties:
@@ -246,6 +201,51 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Tip'
+    Tip:
+      type: object
+      properties:
+        id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        text:
+          type: string
+    AutocompleteResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+              text:
+                type: object
+                properties:
+                  primary:
+                    type: string
+                  secondary:
+                    type: string
+              place:
+                $ref: '#/components/schemas/Place'
+    Photo:
+      type: object
+      properties:
+        id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        prefix:
+          type: string
+        suffix:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
   parameters:
     ApiVersion:
       in: header

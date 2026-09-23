@@ -1,10 +1,10 @@
-aid: foursquare:places-rules
-name: Foursquare Places API Operational Rules
+x-aid: foursquare:places-rules
+x-name: Foursquare Places API Operational Rules
 description: >-
   Operational rules and constraints for working with the Foursquare Places API,
   covering authentication, query parameters, rate limits, attribution, and
   data caching.
-modified: '2026-06-02'
+x-modified: '2026-06-02'
 rules:
   - id: service-key-required
     title: Service Key Required
