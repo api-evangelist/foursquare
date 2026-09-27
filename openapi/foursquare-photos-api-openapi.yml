@@ -55,15 +55,6 @@ paths:
                 items:
                   $ref: '#/components/schemas/Photo'
 components:
-  parameters:
-    ApiVersion:
-      in: header
-      name: X-Places-Api-Version
-      required: true
-      description: Dated Places API version (e.g., "2025-06-17").
-      schema:
-        type: string
-        default: '2025-06-17'
   schemas:
     Photo:
       type: object
@@ -81,6 +72,15 @@ components:
           type: integer
         height:
           type: integer
+  parameters:
+    ApiVersion:
+      in: header
+      name: X-Places-Api-Version
+      required: true
+      description: Dated Places API version (e.g., "2025-06-17").
+      schema:
+        type: string
+        default: '2025-06-17'
   securitySchemes:
     serviceKey:
       type: http

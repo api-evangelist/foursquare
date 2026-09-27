@@ -78,6 +78,35 @@ paths:
                 $ref: '#/components/schemas/PlaceMatchResponse'
 components:
   schemas:
+    Photo:
+      type: object
+      properties:
+        id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        prefix:
+          type: string
+        suffix:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
+    PlaceMatchResponse:
+      type: object
+      properties:
+        place:
+          allOf:
+          - $ref: '#/components/schemas/Place'
+          - type: object
+            properties:
+              match_score:
+                type: number
+                minimum: 0
+                maximum: 1
+                description: Confidence of the match (0-1; higher is stronger).
     Place:
       type: object
       properties:
@@ -217,19 +246,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Tip'
-    PlaceMatchResponse:
-      type: object
-      properties:
-        place:
-          allOf:
-          - $ref: '#/components/schemas/Place'
-          - type: object
-            properties:
-              match_score:
-                type: number
-                minimum: 0
-                maximum: 1
-                description: Confidence of the match (0-1; higher is stronger).
     Tip:
       type: object
       properties:
@@ -240,22 +256,6 @@ components:
           format: date-time
         text:
           type: string
-    Photo:
-      type: object
-      properties:
-        id:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        prefix:
-          type: string
-        suffix:
-          type: string
-        width:
-          type: integer
-        height:
-          type: integer
   parameters:
     ApiVersion:
       in: header

@@ -44,6 +44,7 @@ tags:
   - Recommendations
   - Reviews
   - Movement
+  - Geospatial
 tags_raw:
   - Restaurant
   - Locations
@@ -52,6 +53,7 @@ tags_raw:
   - Recommendations
   - Reviews
   - Movement
+  - Geospatial
 url: https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 apis:

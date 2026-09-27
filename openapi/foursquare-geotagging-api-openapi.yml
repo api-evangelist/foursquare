@@ -69,6 +69,22 @@ paths:
                 $ref: '#/components/schemas/GeotaggingResponse'
 components:
   schemas:
+    Photo:
+      type: object
+      properties:
+        id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        prefix:
+          type: string
+        suffix:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
     Place:
       type: object
       properties:
@@ -218,22 +234,6 @@ components:
           format: date-time
         text:
           type: string
-    Photo:
-      type: object
-      properties:
-        id:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        prefix:
-          type: string
-        suffix:
-          type: string
-        width:
-          type: integer
-        height:
-          type: integer
     GeotaggingResponse:
       type: object
       properties:

@@ -139,6 +139,34 @@ paths:
                 $ref: '#/components/schemas/PlaceSearchResponse'
 components:
   schemas:
+    Photo:
+      type: object
+      properties:
+        id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        prefix:
+          type: string
+        suffix:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
+    PlaceSearchResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Place'
+        context:
+          type: object
+          properties:
+            geo_bounds:
+              type: object
     Place:
       type: object
       properties:
@@ -278,18 +306,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Tip'
-    PlaceSearchResponse:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Place'
-        context:
-          type: object
-          properties:
-            geo_bounds:
-              type: object
     Tip:
       type: object
       properties:
@@ -300,22 +316,6 @@ components:
           format: date-time
         text:
           type: string
-    Photo:
-      type: object
-      properties:
-        id:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        prefix:
-          type: string
-        suffix:
-          type: string
-        width:
-          type: integer
-        height:
-          type: integer
   parameters:
     ApiVersion:
       in: header
