@@ -138,6 +138,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/PlaceSearchResponse'
 components:
+  parameters:
+    ApiVersion:
+      in: header
+      name: X-Places-Api-Version
+      required: true
+      description: Dated Places API version (e.g., "2025-06-17").
+      schema:
+        type: string
+        default: '2025-06-17'
   schemas:
     Photo:
       type: object
@@ -155,18 +164,6 @@ components:
           type: integer
         height:
           type: integer
-    PlaceSearchResponse:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Place'
-        context:
-          type: object
-          properties:
-            geo_bounds:
-              type: object
     Place:
       type: object
       properties:
@@ -306,6 +303,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Tip'
+    PlaceSearchResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Place'
+        context:
+          type: object
+          properties:
+            geo_bounds:
+              type: object
     Tip:
       type: object
       properties:
@@ -316,15 +325,6 @@ components:
           format: date-time
         text:
           type: string
-  parameters:
-    ApiVersion:
-      in: header
-      name: X-Places-Api-Version
-      required: true
-      description: Dated Places API version (e.g., "2025-06-17").
-      schema:
-        type: string
-        default: '2025-06-17'
   securitySchemes:
     serviceKey:
       type: http

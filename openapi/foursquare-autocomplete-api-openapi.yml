@@ -62,22 +62,6 @@ paths:
                 $ref: '#/components/schemas/AutocompleteResponse'
 components:
   schemas:
-    Photo:
-      type: object
-      properties:
-        id:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        prefix:
-          type: string
-        suffix:
-          type: string
-        width:
-          type: integer
-        height:
-          type: integer
     AutocompleteResponse:
       type: object
       properties:
@@ -97,6 +81,22 @@ components:
                     type: string
               place:
                 $ref: '#/components/schemas/Place'
+    Photo:
+      type: object
+      properties:
+        id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        prefix:
+          type: string
+        suffix:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
     Place:
       type: object
       properties:

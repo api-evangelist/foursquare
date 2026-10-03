@@ -55,6 +55,15 @@ paths:
                 items:
                   $ref: '#/components/schemas/Tip'
 components:
+  parameters:
+    ApiVersion:
+      in: header
+      name: X-Places-Api-Version
+      required: true
+      description: Dated Places API version (e.g., "2025-06-17").
+      schema:
+        type: string
+        default: '2025-06-17'
   schemas:
     Tip:
       type: object
@@ -66,15 +75,6 @@ components:
           format: date-time
         text:
           type: string
-  parameters:
-    ApiVersion:
-      in: header
-      name: X-Places-Api-Version
-      required: true
-      description: Dated Places API version (e.g., "2025-06-17").
-      schema:
-        type: string
-        default: '2025-06-17'
   securitySchemes:
     serviceKey:
       type: http

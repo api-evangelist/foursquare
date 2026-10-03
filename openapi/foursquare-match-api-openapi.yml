@@ -77,6 +77,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/PlaceMatchResponse'
 components:
+  parameters:
+    ApiVersion:
+      in: header
+      name: X-Places-Api-Version
+      required: true
+      description: Dated Places API version (e.g., "2025-06-17").
+      schema:
+        type: string
+        default: '2025-06-17'
   schemas:
     Photo:
       type: object
@@ -94,19 +103,6 @@ components:
           type: integer
         height:
           type: integer
-    PlaceMatchResponse:
-      type: object
-      properties:
-        place:
-          allOf:
-          - $ref: '#/components/schemas/Place'
-          - type: object
-            properties:
-              match_score:
-                type: number
-                minimum: 0
-                maximum: 1
-                description: Confidence of the match (0-1; higher is stronger).
     Place:
       type: object
       properties:
@@ -246,6 +242,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Tip'
+    PlaceMatchResponse:
+      type: object
+      properties:
+        place:
+          allOf:
+          - $ref: '#/components/schemas/Place'
+          - type: object
+            properties:
+              match_score:
+                type: number
+                minimum: 0
+                maximum: 1
+                description: Confidence of the match (0-1; higher is stronger).
     Tip:
       type: object
       properties:
@@ -256,15 +265,6 @@ components:
           format: date-time
         text:
           type: string
-  parameters:
-    ApiVersion:
-      in: header
-      name: X-Places-Api-Version
-      required: true
-      description: Dated Places API version (e.g., "2025-06-17").
-      schema:
-        type: string
-        default: '2025-06-17'
   securitySchemes:
     serviceKey:
       type: http
