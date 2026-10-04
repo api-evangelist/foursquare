@@ -81,7 +81,7 @@ components:
                     type: string
               place:
                 $ref: '#/components/schemas/Place'
-    Photo:
+    Tip:
       type: object
       properties:
         id:
@@ -89,14 +89,8 @@ components:
         created_at:
           type: string
           format: date-time
-        prefix:
+        text:
           type: string
-        suffix:
-          type: string
-        width:
-          type: integer
-        height:
-          type: integer
     Place:
       type: object
       properties:
@@ -236,7 +230,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Tip'
-    Tip:
+    Photo:
       type: object
       properties:
         id:
@@ -244,8 +238,14 @@ components:
         created_at:
           type: string
           format: date-time
-        text:
+        prefix:
           type: string
+        suffix:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
   parameters:
     ApiVersion:
       in: header

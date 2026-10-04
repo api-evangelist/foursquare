@@ -138,17 +138,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/PlaceSearchResponse'
 components:
-  parameters:
-    ApiVersion:
-      in: header
-      name: X-Places-Api-Version
-      required: true
-      description: Dated Places API version (e.g., "2025-06-17").
-      schema:
-        type: string
-        default: '2025-06-17'
   schemas:
-    Photo:
+    Tip:
       type: object
       properties:
         id:
@@ -156,14 +147,20 @@ components:
         created_at:
           type: string
           format: date-time
-        prefix:
+        text:
           type: string
-        suffix:
-          type: string
-        width:
-          type: integer
-        height:
-          type: integer
+    PlaceSearchResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Place'
+        context:
+          type: object
+          properties:
+            geo_bounds:
+              type: object
     Place:
       type: object
       properties:
@@ -303,19 +300,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Tip'
-    PlaceSearchResponse:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            $ref: '#/components/schemas/Place'
-        context:
-          type: object
-          properties:
-            geo_bounds:
-              type: object
-    Tip:
+    Photo:
       type: object
       properties:
         id:
@@ -323,8 +308,23 @@ components:
         created_at:
           type: string
           format: date-time
-        text:
+        prefix:
           type: string
+        suffix:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
+  parameters:
+    ApiVersion:
+      in: header
+      name: X-Places-Api-Version
+      required: true
+      description: Dated Places API version (e.g., "2025-06-17").
+      schema:
+        type: string
+        default: '2025-06-17'
   securitySchemes:
     serviceKey:
       type: http

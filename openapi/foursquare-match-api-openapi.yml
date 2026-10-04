@@ -87,7 +87,7 @@ components:
         type: string
         default: '2025-06-17'
   schemas:
-    Photo:
+    Tip:
       type: object
       properties:
         id:
@@ -95,14 +95,21 @@ components:
         created_at:
           type: string
           format: date-time
-        prefix:
+        text:
           type: string
-        suffix:
-          type: string
-        width:
-          type: integer
-        height:
-          type: integer
+    PlaceMatchResponse:
+      type: object
+      properties:
+        place:
+          allOf:
+          - $ref: '#/components/schemas/Place'
+          - type: object
+            properties:
+              match_score:
+                type: number
+                minimum: 0
+                maximum: 1
+                description: Confidence of the match (0-1; higher is stronger).
     Place:
       type: object
       properties:
@@ -242,20 +249,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Tip'
-    PlaceMatchResponse:
-      type: object
-      properties:
-        place:
-          allOf:
-          - $ref: '#/components/schemas/Place'
-          - type: object
-            properties:
-              match_score:
-                type: number
-                minimum: 0
-                maximum: 1
-                description: Confidence of the match (0-1; higher is stronger).
-    Tip:
+    Photo:
       type: object
       properties:
         id:
@@ -263,8 +257,14 @@ components:
         created_at:
           type: string
           format: date-time
-        text:
+        prefix:
           type: string
+        suffix:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
   securitySchemes:
     serviceKey:
       type: http

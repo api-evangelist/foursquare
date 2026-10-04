@@ -61,6 +61,16 @@ paths:
                 $ref: '#/components/schemas/AskResponse'
 components:
   schemas:
+    Tip:
+      type: object
+      properties:
+        id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        text:
+          type: string
     AskResponse:
       type: object
       properties:
@@ -76,22 +86,6 @@ components:
                 description: Human-readable reasons the place matches the query.
               place:
                 $ref: '#/components/schemas/Place'
-    Photo:
-      type: object
-      properties:
-        id:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        prefix:
-          type: string
-        suffix:
-          type: string
-        width:
-          type: integer
-        height:
-          type: integer
     Place:
       type: object
       properties:
@@ -231,7 +225,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Tip'
-    Tip:
+    Photo:
       type: object
       properties:
         id:
@@ -239,8 +233,14 @@ components:
         created_at:
           type: string
           format: date-time
-        text:
+        prefix:
           type: string
+        suffix:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
   parameters:
     ApiVersion:
       in: header

@@ -46,32 +46,6 @@ paths:
                 $ref: '#/components/schemas/Place'
 components:
   schemas:
-    Tip:
-      type: object
-      properties:
-        id:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        text:
-          type: string
-    Photo:
-      type: object
-      properties:
-        id:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        prefix:
-          type: string
-        suffix:
-          type: string
-        width:
-          type: integer
-        height:
-          type: integer
     Place:
       type: object
       properties:
@@ -211,6 +185,32 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Tip'
+    Photo:
+      type: object
+      properties:
+        id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        prefix:
+          type: string
+        suffix:
+          type: string
+        width:
+          type: integer
+        height:
+          type: integer
+    Tip:
+      type: object
+      properties:
+        id:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        text:
+          type: string
   parameters:
     ApiVersion:
       in: header
