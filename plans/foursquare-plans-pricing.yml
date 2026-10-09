@@ -406,3 +406,110 @@ plans:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - metered
+  - subscription
+  units:
+  - compute
+  - data
+  - negotiated
+  - object
+  - period
+  - request
+  plans:
+  - name: Spatial Desktop — Basic
+    access: freemium
+    model: free
+    model_how: derived
+    units:
+    - data
+    - object
+    - other
+    periods:
+    - month
+  - name: Spatial Desktop — Standard
+    access: other
+    model: subscription
+    model_how: stated
+    units:
+    - data
+    - object
+    - other
+    - period
+    periods:
+    - month
+  - name: Spatial Desktop — Pro
+    access: other
+    model: subscription
+    model_how: stated
+    units:
+    - data
+    - object
+    - other
+    - period
+    periods:
+    - month
+  - name: Spatial Workbench — Developer
+    access: other
+    model: subscription
+    model_how: stated
+    units:
+    - compute
+    - data
+    - period
+    periods:
+    - month
+    - per-use
+  - name: Spatial Studio — Community
+    access: freemium
+    model: free
+    model_how: derived
+    units:
+    - data
+    periods:
+    - month
+  - name: Spatial Studio — Enterprise
+    access: enterprise
+    model: subscription
+    model_how: derived
+    units:
+    - data
+    - negotiated
+    periods:
+    - month
+  - name: Places API — Pro Endpoints
+    access: other
+    model: metered
+    model_how: stated
+    units:
+    - request
+    periods:
+    - month
+  - name: Places API — Premium Endpoints
+    access: other
+    model: metered
+    model_how: stated
+    units:
+    - request
+    periods:
+    - month
+  - name: Places API — Ask Endpoints
+    access: other
+    model: metered
+    model_how: stated
+    units:
+    - request
+    periods:
+    - per-use
+  - name: Attribution / Audience / Proximity
+    access: enterprise
+    model: subscription
+    model_how: derived
+    units:
+    - negotiated
+    periods:
+    - month
