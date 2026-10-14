@@ -1,0 +1,51 @@
+generated: '2026-10-14'
+edges:
+- partner_name: Twilio Segment
+  partner: segment
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/foursquare-movement
+  coverage_role:
+  - source
+  cdp_signals:
+    source:
+      catalog_entries:
+      - foursquare-movement
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
+- partner_name: mParticle
+  partner: mparticle
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://docs.mparticle.com/integrations/foursquare/audience/
+  coverage_role:
+  - destination
+  - source
+  cdp_signals:
+    destination:
+      catalog_entries:
+      - foursquare
+      integration_types:
+      - audience
+    source:
+      catalog_entries:
+      - foursquare
+      integration_types:
+      - feed
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
+method: searched
+checked:
+- https://docs.mparticle.com/integrations/foursquare/audience/
+- https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/foursquare-movement
+source:
+- https://docs.mparticle.com/integrations/foursquare/audience/
+- https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/foursquare-movement
