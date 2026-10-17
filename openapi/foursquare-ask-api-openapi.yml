@@ -60,6 +60,15 @@ paths:
               schema:
                 $ref: '#/components/schemas/AskResponse'
 components:
+  parameters:
+    ApiVersion:
+      in: header
+      name: X-Places-Api-Version
+      required: true
+      description: Dated Places API version (e.g., "2025-06-17").
+      schema:
+        type: string
+        default: '2025-06-17'
   schemas:
     Tip:
       type: object
@@ -71,21 +80,6 @@ components:
           format: date-time
         text:
           type: string
-    AskResponse:
-      type: object
-      properties:
-        results:
-          type: array
-          items:
-            type: object
-            properties:
-              justifications:
-                type: array
-                items:
-                  type: string
-                description: Human-readable reasons the place matches the query.
-              place:
-                $ref: '#/components/schemas/Place'
     Place:
       type: object
       properties:
@@ -241,15 +235,21 @@ components:
           type: integer
         height:
           type: integer
-  parameters:
-    ApiVersion:
-      in: header
-      name: X-Places-Api-Version
-      required: true
-      description: Dated Places API version (e.g., "2025-06-17").
-      schema:
-        type: string
-        default: '2025-06-17'
+    AskResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              justifications:
+                type: array
+                items:
+                  type: string
+                description: Human-readable reasons the place matches the query.
+              place:
+                $ref: '#/components/schemas/Place'
   securitySchemes:
     serviceKey:
       type: http

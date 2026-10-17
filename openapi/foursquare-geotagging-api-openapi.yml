@@ -88,6 +88,13 @@ components:
           format: date-time
         text:
           type: string
+    GeotaggingResponse:
+      type: object
+      properties:
+        candidates:
+          type: array
+          items:
+            $ref: '#/components/schemas/Place'
     Place:
       type: object
       properties:
@@ -227,13 +234,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Tip'
-    GeotaggingResponse:
-      type: object
-      properties:
-        candidates:
-          type: array
-          items:
-            $ref: '#/components/schemas/Place'
     Photo:
       type: object
       properties:

@@ -97,19 +97,6 @@ components:
           format: date-time
         text:
           type: string
-    PlaceMatchResponse:
-      type: object
-      properties:
-        place:
-          allOf:
-          - $ref: '#/components/schemas/Place'
-          - type: object
-            properties:
-              match_score:
-                type: number
-                minimum: 0
-                maximum: 1
-                description: Confidence of the match (0-1; higher is stronger).
     Place:
       type: object
       properties:
@@ -265,6 +252,19 @@ components:
           type: integer
         height:
           type: integer
+    PlaceMatchResponse:
+      type: object
+      properties:
+        place:
+          allOf:
+          - $ref: '#/components/schemas/Place'
+          - type: object
+            properties:
+              match_score:
+                type: number
+                minimum: 0
+                maximum: 1
+                description: Confidence of the match (0-1; higher is stronger).
   securitySchemes:
     serviceKey:
       type: http
