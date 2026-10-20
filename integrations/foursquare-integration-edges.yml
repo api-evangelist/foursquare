@@ -68,12 +68,38 @@ edges:
     builder: Pipedream repo (component)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: Databricks Marketplace
+  partner: databricks
+  partner_match: aggregator
+  type: marketplace
+  marketplace: databricks-marketplace
+  channel: distribution
+  relationship: distribution-channel
+  direction: third-party
+  evidence: https://marketplace.databricks.com/provider/0bb11653-c3cd-40af-9457-0ac5a7706180
+  category: data product listing
+  contract_reference:
+    register: Databricks Marketplace (marketplace.databricks.com/api/2.0/public-marketplace-providers + public-marketplace-listings)
+    spec_file: null
+    role: data-marketplace-seller
+    registered_name: Foursquare
+    matched_domain: foursquare.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_listings:
+    - OS Places
+    signal_note: 'participation: the provider lists data products on this marketplace; counts are context'
+    detected_by: sweep-data-marketplaces.py
+    detected: '2026-10-20'
+  detected_by: sweep-data-marketplaces.py
+  detected: '2026-10-20'
 method: searched
 checked:
 - https://docs.mparticle.com/integrations/foursquare/audience/
 - https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
 - https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/
 - https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/foursquare-movement
+- https://marketplace.databricks.com/
 source:
 - https://docs.mparticle.com/integrations/foursquare/audience/
 - https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/foursquare-movement
