@@ -93,6 +93,35 @@ edges:
     detected: '2026-10-20'
   detected_by: sweep-data-marketplaces.py
   detected: '2026-10-20'
+- partner_name: Andreessen Horowitz (a16z)
+  partner: a16z
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://a16z.com/companies/foursquare/
+  category: vc portfolio participation
+  contract_reference:
+    register: a16z portfolio (a16z.com/portfolio/, the page's own data-companies JSON)
+    standard: null
+    spec_file: null
+    role: vc-portfolio-company
+    registered_name: Foursquare
+    register_id: https://a16z.com/companies/foursquare/
+    register_country: null
+    register_website: https://foursquare.com
+    matched_domain: foursquare.com
+    matched_by: domain+name-among-holders
+    signal_note: 'participation only: the venture firm''s own published portfolio lists the company (investment);
+      an ownership and participation record, not conformance or certification'
+    detected_by: sweep-vc-portfolios.py
+    detected: '2026-10-21'
+    year: '2010'
+    status: Active
+    sector: Consumer
+  detected_by: sweep-vc-portfolios.py
+  first_seen: '2026-10-21'
 method: searched
 checked:
 - https://docs.mparticle.com/integrations/foursquare/audience/
@@ -100,6 +129,12 @@ checked:
 - https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/
 - https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/foursquare-movement
 - https://marketplace.databricks.com/
+- https://a16z.com/portfolio/
+- https://www.battery.com/company/
+- https://www.battery.com/wp-admin/admin-ajax.php
+- https://www.indexventures.com/companies/
+- https://www.sequoiacap.com/our-companies/
+- https://www.sequoiacap.com/sitemap.xml
 source:
 - https://docs.mparticle.com/integrations/foursquare/audience/
 - https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/foursquare-movement
