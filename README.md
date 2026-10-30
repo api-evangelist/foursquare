@@ -1,4 +1,4 @@
-# Foursquare (foursquare)
+# Foursquare
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,156 +66,184 @@
 
 Foursquare is a location intelligence platform that maintains a global graph of more than 100 million points of interest (POI) and provides developer APIs and SDKs for place search, geotagging, autocomplete, audience measurement, and visit detection across web and mobile.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/apis.yml)
+**Areas:** Restaurant · Location · Places · Geocoding · Recommendations · Reviews · Movement · Geospatial
 
-## Scope
+## Foursquare on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Foursquare is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/foursquare/](https://apis.io/providers/foursquare/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (12)
 
-- Restaurant
-- Locations
-- Places
-- Geocoding
-- Recommendations
-- Reviews
-- Movement
+- [Foursquare Movement SDK](https://apis.io/apis/foursquare/movement-sdk/) — Mobile SDK for iOS, Android, and React Native that translates passive device location signals into visit events using the Foursquare POI graph.
+- [Foursquare Movement Geofence API](https://apis.io/apis/foursquare/movement-geofence-api/) — Server-side API for managing geofences that trigger events when Movement SDK-equipped devices enter or exit defined places.
+- [Foursquare Studio Data API](https://apis.io/apis/foursquare/studio-data-api/) — API for managing datasets, maps, and visualizations within Foursquare Studio for geospatial analytics.
+- [Foursquare Measurement API (MAPI)](https://apis.io/apis/foursquare/measurement-api/) — API for attribution and audience measurement using Foursquare visit panels.
+- [Foursquare Ask API](https://apis.io/apis/foursquare/foursquare-ask-api/) — Natural-language place search with justifications
+- [Foursquare Autocomplete API](https://apis.io/apis/foursquare/foursquare-autocomplete-api/) — Type-ahead search for places, addresses, and geographies
+- [Foursquare Details API](https://apis.io/apis/foursquare/foursquare-details-api/) — Retrieve attributes for a specific place
+- [Foursquare Geotagging API](https://apis.io/apis/foursquare/foursquare-geotagging-api/) — Resolve a coordinate to the most likely place (Place Snap)
+- [Foursquare Match API](https://apis.io/apis/foursquare/foursquare-match-api/) — Match an external POI record to a Foursquare place
+- [Foursquare Photos API](https://apis.io/apis/foursquare/foursquare-photos-api/) — Photos associated with a place
+- [Foursquare Search API](https://apis.io/apis/foursquare/foursquare-search-api/) — Find and explore places
+- [Foursquare Tips API](https://apis.io/apis/foursquare/foursquare-tips-api/) — User tips associated with a place
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-03-01
-- **Modified:** 2026-06-02
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Foursquare Places API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Foursquare Places API provides global POI data with endpoints for place search, nearby, autocomplete, place details, photos, tips, geotagging, and Placemaker submissions.
+- [Foursquare Agentic Access](https://apis.io/agentic-access/foursquare/foursquare-agentic-access/)
 
-- **Human URL:** [https://docs.foursquare.com/developer/reference/places-api-overview](https://docs.foursquare.com/developer/reference/places-api-overview)
-- **Base URL:** `https://places-api.foursquare.com`
+#### JSON Schema (8)
 
-#### Tags
+The data models the API reads and writes.
 
-- Places
-- Search
-- Geocoding
-- Autocomplete
+- [AskResponse](https://apis.io/schemas/foursquare/foursquare-ask-response/)
+- [AutocompleteResponse](https://apis.io/schemas/foursquare/foursquare-autocomplete-response/)
+- [GeotaggingResponse](https://apis.io/schemas/foursquare/foursquare-geotagging-response/)
+- [Photo](https://apis.io/schemas/foursquare/foursquare-photo/)
+- [FoursquarePlace](https://apis.io/schemas/foursquare/foursquare-place/)
+- [PlaceMatchResponse](https://apis.io/schemas/foursquare/foursquare-place-match-response/)
+- [PlaceSearchResponse](https://apis.io/schemas/foursquare/foursquare-place-search-response/)
+- [FoursquareTip](https://apis.io/schemas/foursquare/foursquare-tip/)
 
-#### Properties
+#### JSON Structure (1)
 
-- [Documentation](https://docs.foursquare.com/developer/reference/places-api-overview)
-- [Documentation](https://docs.foursquare.com/developer/reference/foursquare-api-reference)
-- [Sign Up](https://foursquare.com/developers/)
-- [Tools](https://github.com/foursquare/foursquare-places-mcp)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/openapi/foursquare-places-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Rules](https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/rules/foursquare-places-rules.yml)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-place.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-schema/foursquare-tip.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/json-ld/foursquare-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Vocabulary](https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/vocabulary/foursquare-vocabulary.yml)
-- [Example](https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-place-example.json)
-- [Example](https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-search-example.json)
-- [Example](https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-match-example.json)
-- [Example](https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-ask-example.json)
-- [Example](https://raw.githubusercontent.com/api-evangelist/foursquare/refs/heads/main/examples/foursquare-geotagging-example.json)
-- [Postman Collection](collections/foursquare-places.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/foursquare-places.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Data models expressed in JSON Structure.
 
-### Foursquare Movement SDK
+- [Foursquare Structure](https://apis.io/json-structure/foursquare/foursquare-structure/)
 
-Mobile SDK for iOS, Android, and React Native that translates passive device location signals into visit events using the Foursquare POI graph.
+#### JSON-LD (1)
 
-- **Human URL:** [https://docs.foursquare.com/developer/docs/movement-sdk-overview](https://docs.foursquare.com/developer/docs/movement-sdk-overview)
+Linked-data contexts for the provider's vocabulary.
 
-#### Tags
+- [Foursquare Context](https://apis.io/jsonld/foursquare/foursquare-context/)
 
-- Movement
-- Visits
-- Mobile SDK
+#### Vocabulary (1)
 
-#### Properties
+The provider's domain terms, defined.
 
-- [Documentation](https://docs.foursquare.com/developer/docs/movement-sdk-overview)
-- [Postman Collection](collections/foursquare-places.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/foursquare-places.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Foursquare Vocabulary](https://apis.io/vocabularies/foursquare/foursquare-vocabulary/)
 
-### Foursquare Movement Geofence API
+#### Examples (5)
 
-Server-side API for managing geofences that trigger events when Movement SDK-equipped devices enter or exit defined places.
+Example requests and responses.
 
-- **Human URL:** [https://docs.foursquare.com/developer/reference/movement-geofence-api](https://docs.foursquare.com/developer/reference/movement-geofence-api)
+- [Foursquare Ask Example](https://apis.io/examples/foursquare/foursquare-ask-example/)
+- [Foursquare Geotagging Example](https://apis.io/examples/foursquare/foursquare-geotagging-example/)
+- [Foursquare Match Example](https://apis.io/examples/foursquare/foursquare-match-example/)
+- [Foursquare Place Example](https://apis.io/examples/foursquare/foursquare-place-example/)
+- [Foursquare Search Example](https://apis.io/examples/foursquare/foursquare-search-example/)
 
-#### Tags
+#### Collections (9)
 
-- Geofence
-- Movement
+Postman and Open Collection request collections.
 
-#### Properties
+- [Foursquare Places Ask API](https://apis.io/collections/foursquare/open-foursquare-ask-api/)
+- [Foursquare Places Ask Autocomplete API](https://apis.io/collections/foursquare/open-foursquare-autocomplete-api/)
+- [Foursquare Places Ask Details API](https://apis.io/collections/foursquare/open-foursquare-details-api/)
+- [Foursquare Places Ask Geotagging API](https://apis.io/collections/foursquare/open-foursquare-geotagging-api/)
+- [Foursquare Places Ask Match API](https://apis.io/collections/foursquare/open-foursquare-match-api/)
+- [Foursquare Places Ask Photos API](https://apis.io/collections/foursquare/open-foursquare-photos-api/)
+- [Foursquare Places API](https://apis.io/collections/foursquare/open-foursquare-places/)
+- [Foursquare Places Ask Search API](https://apis.io/collections/foursquare/open-foursquare-search-api/)
+- [Foursquare Places Ask Tips API](https://apis.io/collections/foursquare/open-foursquare-tips-api/)
 
-- [Documentation](https://docs.foursquare.com/developer/reference/movement-geofence-api)
-- [Postman Collection](collections/foursquare-places.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/foursquare-places.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Governance rules (2)
 
-### Foursquare Studio Data API
+Spectral rulesets for the provider's contracts.
 
-API for managing datasets, maps, and visualizations within Foursquare Studio for geospatial analytics.
+- [Foursquare — jsonschema rules](https://apis.io/rules/foursquare/foursquare-jsonschema-spectral-rules/)
+- [Foursquare — places rules](https://apis.io/rules/foursquare/foursquare-places-rules/)
 
-- **Human URL:** [https://docs.foursquare.com/developer/reference/studio-data-api](https://docs.foursquare.com/developer/reference/studio-data-api)
+#### Security (2)
 
-#### Tags
+Authentication, trust centre, and vulnerability disclosure.
 
-- Studio
-- Geospatial
-- Analytics
+- [Foursquare Authentication](https://apis.io/security/foursquare/foursquare-authentication/)
+- [Foursquare Domain Security](https://apis.io/security/foursquare/foursquare-domain-security/)
 
-#### Properties
+#### Plans and pricing (1)
 
-- [Documentation](https://docs.foursquare.com/developer/reference/studio-data-api)
-- [Postman Collection](collections/foursquare-places.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/foursquare-places.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Published plans, tiers and prices.
 
-### Foursquare Measurement API (MAPI)
+- [Foursquare Plans Pricing](https://apis.io/plans/foursquare/foursquare-plans-pricing/)
 
-API for attribution and audience measurement using Foursquare visit panels.
+#### Rate limits (1)
 
-- **Human URL:** [https://docs.foursquare.com/developer/reference/measurement-api-mapi](https://docs.foursquare.com/developer/reference/measurement-api-mapi)
+Published request limits.
 
-#### Tags
+- [Foursquare Rate Limits](https://apis.io/rate-limits/foursquare/foursquare-rate-limits/)
 
-- Measurement
-- Attribution
-- Analytics
+#### FinOps (1)
 
-#### Properties
+What the API costs to run, by operation.
 
-- [Documentation](https://docs.foursquare.com/developer/reference/measurement-api-mapi)
-- [Postman Collection](collections/foursquare-places.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/foursquare-places.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Foursquare Finops](https://apis.io/finops/foursquare/foursquare-finops/)
 
-## Common Properties
+## Where to find this API
 
-- [GitHub Organization](https://github.com/foursquare)
-- [Tools](https://github.com/foursquare/foursquare-places-mcp)
-- [SDK](https://github.com/foursquare/movementsdk-ios-spm)
-- [SDK](https://github.com/foursquare/movement-sdk-react-native)
-- [SDK](https://github.com/foursquare/fsq-studio-sdk-examples)
-- [Sample Code](https://github.com/foursquare/foursquare-places-api-samples)
-- [Postman](https://github.com/foursquare/Place-API-Postman-Collection) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [LinkedIn](https://www.linkedin.com/company/location-foursquare)
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://foursquare.com/)
-- [Developer  Portal](https://docs.foursquare.com/developer/)
-- [Sign Up](https://foursquare.com/developers/)
 - [Documentation](https://docs.foursquare.com/developer/reference/places-api-overview)
-- [Discord](https://discord.gg/foursquare)
 - [Blog](https://location.foursquare.com/resources/blog/)
-- [Integrations](https://foursquare.com/company/partners/)
-- [L L Ms Txt](https://docs.foursquare.com/llms.txt)
+- [GitHub](https://github.com/foursquare)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 40.5** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 63.0 |
+| Contract governance | 23.5 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 50.0 |
+| Access clarity | 21.1 |
+
+**Agent readiness 23.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/foursquare/](https://apis.io/providers/foursquare/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Foursquare: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/foursquare/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
